@@ -39,7 +39,7 @@ const Greetings = () => <>
 			animation: ${animation} ${anim.len}s infinite forwards;
 		`;
 
-		return <div className='greeting-minidiv' style={{
+		return <div key={i} className='greeting-minidiv' style={{
 			position: 'absolute',
 			transform: 'translateY(8em)',
 			left: 0,
