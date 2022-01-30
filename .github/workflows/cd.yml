@@ -33,7 +33,7 @@ jobs:
         cd build/
         git init
         git add -A
-        git commit --no-message
+        git commit --allow-empty-message
         git push -f origin gh-pages
       env:
         user_name: 'github-actions[bot]'
