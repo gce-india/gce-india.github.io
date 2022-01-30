@@ -33,7 +33,7 @@ const Main = () => {
 					}
 					if (audio.current?.volume !== limit) {
 						audio.current!.volume += volUnit;
-						return setTimeout(fadeIn, timeSlice);
+						timeOut = setTimeout(fadeIn, timeSlice);
 					}
 				};
 				fadeIn();
@@ -47,7 +47,7 @@ const Main = () => {
 					}
 					if (audio.current!.volume >= 0) {
 						audio.current!.volume -= volUnit;
-						setTimeout(fadeOut, timeSlice);	
+						timeOut = setTimeout(fadeOut, timeSlice);
 					}
 				};
 				fadeOut();
