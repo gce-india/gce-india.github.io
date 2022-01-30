@@ -30,10 +30,10 @@ jobs:
         git config --global user.email $user_email
         git remote set-url origin https://${github_token}@github.com/${repository}
         cd build/
-		git init
-		git add -A
-		git commit -no-message
-		git push -f origin gh-pages
+        git init
+        git add -A
+        git commit -no-message
+        git push -f origin gh-pages
       env:
         user_name: 'github-actions[bot]'
         user_email: 'github-actions[bot]@users.noreply.github.com'
