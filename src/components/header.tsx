@@ -1,7 +1,6 @@
 import {
 	Navbar,
 	NavbarBrand,
-	NavbarToggler,
 	Collapse,
 	Nav,
 	NavItem,

@@ -1,19 +1,88 @@
+import { useRef } from 'react';
 import {
 	Container,
-	Row, Col,
-	Button
+	Row, Col
 } from 'reactstrap';
 
 import './main.css';
-import { animation as anim } from '../constants';
+import {
+	animation as anim,
+	audioVolumeUnit as volUnit,
+	audioTimeSlice as timeSlice
+} from '../constants';
 import Greetings from './greetings';
 
+
+
 const Main = () => {
+	const audio = useRef<HTMLAudioElement>(null);
+	let timeOut: number;
+
+	interface FadeType {
+		type: string,
+		limit?: number
+	};
+
+	const fade = ({ type, limit }: FadeType): void => {
+		switch (type) {
+			case 'in': {
+				const fadeIn = () => {
+					if (audio.current!.volume + volUnit >= limit!) {
+						audio.current!.volume = limit!;
+						return;
+					}
+					if (audio.current?.volume !== limit) {
+						audio.current!.volume += volUnit;
+						return setTimeout(fadeIn, timeSlice);
+					}
+				};
+				fadeIn();
+			}
+			break;
+			case 'out': {
+				const fadeOut = () => {
+					if (audio.current!.volume - volUnit <= 0) {
+						audio.current!.volume = 0;
+						return;
+					}
+					if (audio.current!.volume >= 0) {
+						audio.current!.volume -= volUnit;
+						setTimeout(fadeOut, timeSlice);	
+					}
+				};
+				fadeOut();
+			}
+			break;
+			default:
+		}
+	};
+
+	const playAudio = async () => {
+		const limit = 0.3;
+		if (timeOut != null)
+			clearInterval(timeOut);
+		if (audio.current?.paused) {
+			audio.current!.currentTime = 0;
+			audio.current!.volume = 0;
+			fade({ type: 'in', limit });
+			timeOut = setTimeout(() => fade({ type: 'out' }), audio.current!.duration * 1000 - timeSlice * (limit / volUnit));
+			await audio.current?.play();
+			audio.current!.volume = 0;
+		} else {
+			fade({ type: 'out' });
+			timeOut = setTimeout(() => {
+				audio.current?.pause();
+				audio.current!.volume = 0;
+				audio.current!.currentTime = 0;
+			}, timeSlice * (limit / volUnit));
+		}
+	};
+
 	return <Container fluid='lg' className='p-responsive gutter-spacious mx-auto' color='dark'>
 		<Row>
 			<Col className='text-center' >
 				<Col xs='6' md='4' lg='2' className='mx-auto my-4' >
-					<a href='#'><img src='/assets/logo.png' alt='Logo' className='w-100' /></a>
+					<a onClick={playAudio} href='#'><img src='/assets/logo.png' alt='Logo' className='w-100' /></a>
 				</Col>
 				<Col className='levitating'>
 					<Greetings />
@@ -26,6 +95,7 @@ const Main = () => {
 			</Col>
 			<Col xs='12'>
 				<Row>
+					<audio ref={audio} src='/assets/Vande_Mataram.mp3' />
 					<Col className='col-12 col-md-2 offset-md-3 mb-1'>
 						<a 
 							href='https://apply.githubcampus.expert/'

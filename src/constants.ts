@@ -34,6 +34,11 @@ const ANIMATION: { [k: string]: number } = {
 
 ANIMATION.frac = parseFloat((100 / ANIMATION.len).toFixed(4));
 
+const AUDIO_VOLUME_UNIT = 0.02;
+const AUDIO_TIME_SLICE = 200;
+
 export const title = TITLE;
 export const greetings = GREETINGS;
 export const animation = ANIMATION;
+export const audioVolumeUnit = AUDIO_VOLUME_UNIT;
+export const audioTimeSlice = AUDIO_TIME_SLICE;
