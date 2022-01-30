@@ -1,8 +1,9 @@
 name: Continuous Deployment
 
 on:
-  tag:
+  push:
     branches: [main]
+    tags: [v*]
 
 jobs:
   build:
