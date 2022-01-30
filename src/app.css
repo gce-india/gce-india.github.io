@@ -1,3 +1,8 @@
 button {
 	font-size: calc(10px + 2vmin);
 }
+
+@keyframes levitating {
+	from { transform: translateY(0); }
+	to   { transform: translateY(7px); }
+}

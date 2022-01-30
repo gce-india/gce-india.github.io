@@ -1,0 +1,4 @@
+.levitating {
+	animation: levitating 0.25s alternate-reverse infinite ease-in-out;
+	/* Failed attempt: cubic-bezier(.17,.64,.77,.32) */
+}
