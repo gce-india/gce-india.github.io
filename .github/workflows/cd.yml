@@ -35,10 +35,9 @@ jobs:
         git add -A
         git commit --allow-empty-message --no-edit
         git branch -M gh-pages
-        git remote -v
         git push -f origin gh-pages
       env:
         user_name: 'github-actions[bot]'
         user_email: 'github-actions[bot]@users.noreply.github.com'
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
         repository: ${{ github.repository }}
