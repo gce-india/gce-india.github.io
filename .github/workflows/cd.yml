@@ -29,12 +29,13 @@ jobs:
       run: |
         git config --global user.name $user_name
         git config --global user.email $user_email
-        git remote add origin https://${github_token}@github.com/${repository}
+        git remote set-url origin https://${github_token}@github.com/${repository}
         cd build/
         git init
         git add -A
         git commit --allow-empty-message --no-edit
         git branch -M gh-pages
+        git remote -v
         git push -f origin gh-pages
       env:
         user_name: 'github-actions[bot]'
