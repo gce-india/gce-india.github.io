@@ -13,8 +13,6 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-      with:
-      - token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
 
     - name: Set up Node.js 15.x
       uses: actions/setup-node@v1
@@ -31,7 +29,7 @@ jobs:
       run: |
         git config --global user.name $user_name
         git config --global user.email $user_email
-        git remote set-url origin https://${github_token}@github.com/${repository}
+        git remote set-url origin https://paramsiddharth:${github_token}@github.com/${repository}
         cd build/
         git init
         git add -A
