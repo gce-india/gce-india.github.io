@@ -1,6 +1,6 @@
 const TITLE = 'Campus Experts India';
 
-const GREETINGS = {
+const GREETINGS: { [lang: string]: String } = {
 	English: 			'Hello!',
 	Hindi: 				'नमस्ते ।',
 	Punjabi: 			'ਸਤਿ ਸ਼੍ਰੀ ਅਕਾਲ ।',
@@ -26,5 +26,14 @@ const GREETINGS = {
 	Kokborok: 			'Khulumkha!'
 };
 
+const ANIMATION: { [k: string]: number } = {
+	diff: 0.5,
+	len: Object.keys(GREETINGS).length,
+	charLen: 2
+};
+
+ANIMATION.frac = parseFloat((100 / ANIMATION.len).toFixed(4));
+
 export const title = TITLE;
-export const greetings: { [lang: string]: String } = GREETINGS;
+export const greetings = GREETINGS;
+export const animation = ANIMATION;
