@@ -40,3 +40,7 @@ a:focus {
 	color: inherit;
 	filter: brightness(110%);
 }
+
+a.btn {
+	text-decoration: none;
+}
