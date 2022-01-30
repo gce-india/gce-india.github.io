@@ -1,15 +1,13 @@
 import './App.css';
 
 function App() {
-  return (
-	<div className="App">
+	return <div className="App">
 		<header className="App-header">
-		<p>
-			Hello world!
-		</p>
+			<p>
+				Hello world!
+			</p>
 		</header>
-	</div>
-  );
+	</div>;
 }
 
 export default App;

@@ -6,8 +6,8 @@
 		"dev": "vite",
 		"build": "tsc && vite build",
 		"preview": "vite preview",
-		"lint": "tslint -c tslint.json \"src/**/*.ts*\"",
-		"lint:fix": "tslint --fix -c tslint.json \"src/**/*.ts*\""
+		"lint": "eslint ./src",
+		"lint:fix": "eslint --fix ./src"
 	},
 	"dependencies": {
 		"react": "^17.0.2",
@@ -16,8 +16,11 @@
 	"devDependencies": {
 		"@types/react": "^17.0.33",
 		"@types/react-dom": "^17.0.10",
+		"@typescript-eslint/eslint-plugin": "^5.10.1",
+		"@typescript-eslint/parser": "^5.10.1",
 		"@vitejs/plugin-react": "^1.0.7",
 		"eslint": "^8.8.0",
+		"eslint-plugin-react": "^7.28.0",
 		"typescript": "^4.4.4",
 		"vite": "^2.7.2"
 	}
