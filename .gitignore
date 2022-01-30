@@ -1,0 +1,18 @@
+node_modules/
+.DS_Store
+build/
+dist/
+dist-ssr/
+*.local
+*.local.*
+
+# HTTP request templates
+*.http
+*.rest
+
+# Zone identifiers
+*:Zone.Identifier
+
+# Temporary files
+tmp/
+temp/
