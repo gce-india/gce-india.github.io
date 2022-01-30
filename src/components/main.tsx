@@ -16,6 +16,7 @@ import Greetings from './greetings';
 
 const Main = () => {
 	const audio = useRef<HTMLAudioElement>(null);
+	const audioSymbol = useRef<HTMLDivElement>(null);
 	let timeOut: number;
 
 	interface FadeType {
@@ -65,11 +66,13 @@ const Main = () => {
 			audio.current!.currentTime = 0;
 			audio.current!.volume = 0;
 			fade({ type: 'in', limit });
+			audioSymbol.current?.classList.add('show');
 			timeOut = setTimeout(() => fade({ type: 'out' }), audio.current!.duration * 1000 - timeSlice * (limit / volUnit));
 			await audio.current?.play();
 			audio.current!.volume = 0;
 		} else {
 			fade({ type: 'out' });
+			audioSymbol.current?.classList.remove('show');
 			timeOut = setTimeout(() => {
 				audio.current?.pause();
 				audio.current!.volume = 0;
@@ -79,6 +82,16 @@ const Main = () => {
 	};
 
 	return <Container fluid='lg' className='p-responsive gutter-spacious mx-auto' color='dark'>
+		<div ref={audioSymbol} className='hidden' style={{
+			position: 'absolute',
+			right: 30
+		}}>
+			<img src='/assets/sound.gif' style={{
+				width: 40,
+				opacity: 0.2,
+				borderRadius: '50%'
+			}} />
+		</div>
 		<Row>
 			<Col className='text-center' >
 				<Col xs='6' md='4' lg='2' className='mx-auto my-4' >

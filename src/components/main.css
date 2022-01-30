@@ -2,3 +2,12 @@
 	animation: levitating 0.25s alternate-reverse infinite ease-in-out;
 	/* Failed attempt: cubic-bezier(.17,.64,.77,.32) */
 }
+
+.hidden {
+	opacity: 0;
+	transition: opacity 2s;
+}
+
+.hidden.show {
+	opacity: 1;
+}
