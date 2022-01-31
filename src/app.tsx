@@ -1,12 +1,15 @@
+import { BrowserRouter } from 'react-router-dom';
+
 import './app.css';
-import { Header, Main, Footer } from './components';
+import { Header, Footer } from './components';
+import Routes from './routes';
 
 const App = () => {
-	return <>
+	return <BrowserRouter>
 		<Header />
-		<Main />
+		<Routes />
 		<Footer />
-	</>;
+	</BrowserRouter>;
 };
 
 export default App;

@@ -3,9 +3,9 @@ import {
 	NavbarBrand,
 	Collapse,
 	Nav,
-	NavItem,
-	NavLink
+	NavItem
 } from 'reactstrap';
+import { NavLink } from 'react-router-dom';
 
 import { title } from '../constants';
 
@@ -32,16 +32,16 @@ const Header = () => {
 			<Collapse id='navbar' navbar>
 				<Nav className='ms-auto' navbar>
 					<NavItem>
-						<NavLink href='/'>Home</NavLink>
+						<NavLink className='nav-link' to='/'>Home</NavLink>
 					</NavItem>
 					<NavItem>
-						<NavLink href='/discover'>Discover</NavLink>
+						<NavLink className='nav-link' to='/discover'>Discover</NavLink>
 					</NavItem>
 					<NavItem>
-						<NavLink href='/about'>About</NavLink>
+						<NavLink className='nav-link' to='/about'>About</NavLink>
 					</NavItem>
 					<NavItem>
-						<NavLink href='/contact'>Contact Us</NavLink>
+						<NavLink className='nav-link' to='/contact'>Contact Us</NavLink>
 					</NavItem>
 				</Nav>
 			</Collapse>

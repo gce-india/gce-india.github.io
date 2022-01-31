@@ -12,8 +12,6 @@ import {
 } from '../constants';
 import Greetings from './greetings';
 
-
-
 const Main = () => {
 	const audio = useRef<HTMLAudioElement>(null);
 	const audioSymbol = useRef<HTMLDivElement>(null);
