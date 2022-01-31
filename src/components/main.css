@@ -10,4 +10,5 @@
 
 .hidden.show {
 	opacity: 1;
+	cursor: pointer;
 }

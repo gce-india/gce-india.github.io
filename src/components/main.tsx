@@ -67,12 +67,18 @@ const Main = () => {
 			audio.current!.volume = 0;
 			fade({ type: 'in', limit });
 			audioSymbol.current?.classList.add('show');
-			timeOut = setTimeout(() => fade({ type: 'out' }), audio.current!.duration * 1000 - timeSlice * (limit / volUnit));
+			audioSymbol.current?.addEventListener('click', playAudio);
+			timeOut = setTimeout(() => {
+				fade({ type: 'out' });
+				audioSymbol.current?.classList.remove('show');
+				audioSymbol.current?.removeEventListener('click', playAudio);
+			}, audio.current!.duration * 1000 - timeSlice * (limit / volUnit));
 			await audio.current?.play();
 			audio.current!.volume = 0;
 		} else {
 			fade({ type: 'out' });
 			audioSymbol.current?.classList.remove('show');
+			audioSymbol.current?.removeEventListener('click', playAudio);
 			timeOut = setTimeout(() => {
 				audio.current?.pause();
 				audio.current!.volume = 0;
