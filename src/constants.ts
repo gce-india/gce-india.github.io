@@ -37,8 +37,11 @@ ANIMATION.frac = parseFloat((100 / ANIMATION.len).toFixed(4));
 const AUDIO_VOLUME_UNIT = 0.02;
 const AUDIO_TIME_SLICE = 200;
 
+const FORM_LINK = 'https://docs.google.com/forms/d/e/1FAIpQLSdX6AocQg8d_g8Snq6vWxdOQN7p_Y6nCaeCWMKDfdsIZm8Pww/viewform?usp=sf_link';
+
 export const title = TITLE;
 export const greetings = GREETINGS;
 export const animation = ANIMATION;
 export const audioVolumeUnit = AUDIO_VOLUME_UNIT;
 export const audioTimeSlice = AUDIO_TIME_SLICE;
+export const formLink = FORM_LINK;
