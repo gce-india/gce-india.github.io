@@ -56,7 +56,7 @@ const Footer = () => {
 		}}>
 			<Row className='text-center'>
 				<Col xs='12' className='offset-md-8 col-md-2 mb-2'>
-					<a href='https://education.github.com/experts/terms' target='_blank'>Terms of service</a>
+					<a href='https://education.github.com/experts/terms' target='_blank'>Terms of Service</a>
 				</Col>
 				<Col xs='12' className='col-md-2 mb-2'>
 					<a href='https://education.github.com/experts/' target='_blank'>Campus Experts</a>
