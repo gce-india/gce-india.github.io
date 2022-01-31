@@ -69,7 +69,7 @@ const About = () => <Container fluid='md mt-5 mb-5'>
 			You can discover your local campus experts from the official GitHub Campus Experts website.
 		</Col>
 		<Col xs='12' md='8' className='text-center mt-1'>
-		<a href='http://githubcampus.expert/' target='_blank' className='btn text-center btn-danger'>GitHub Campus Experts</a>
+		<a href='http://githubcampus.expert/' target='_blank' className='btn text-center btn-danger'>🚩 GitHub Campus Experts</a>
 		</Col>
 	</Row>
 	<Row className='mt-3 justify-content-center'>
