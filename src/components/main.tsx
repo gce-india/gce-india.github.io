@@ -3,6 +3,7 @@ import {
 	Container,
 	Row, Col
 } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 import './main.css';
 import {
@@ -124,10 +125,10 @@ const Main = () => {
 						}}><b>🚩 Apply</b></a>
 					</Col>
 					<Col className='col-12 col-md-2 mb-1'>
-						<a href='#' className='btn d-block w-100 btn-light text-black'><b>🎭 Discover</b></a>
+						<Link to='/discover' className='btn d-block w-100 btn-light text-black'><b>🎭 Discover</b></Link>
 					</Col>
 					<Col className='col-12 col-md-2 mb-1'>
-						<a href='#' className='btn d-block w-100 btn-success'><b>📨 Contact</b></a>
+						<Link to='/contact' className='btn d-block w-100 btn-success'><b>📨 Contact</b></Link>
 					</Col>
 				</Row>
 			</Col>
