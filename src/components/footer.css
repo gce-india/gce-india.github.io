@@ -9,10 +9,8 @@
 	padding-right: 4px;
 	transform: translateY(0.1em);
 	font-size: 1.8em;
-	background-image: url(/assets/India.jpg);
-	background-size: 1.6em 1.6em;
-	background-position: -0.17em -0.35em;
-	background-clip: text;
-	-webkit-background-clip: text;
+	background-image: url(/assets/Indian_Heart.png);
+	background-size: /* 40px 40px */ 1.39em 1.39em;
+	background-position: -0.03em -0.29em;
 	color: transparent;
 }
