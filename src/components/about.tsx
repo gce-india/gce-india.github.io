@@ -14,7 +14,7 @@ const About = () => <Container fluid='md mt-5 mb-5'>
 			<h4 className='text-center mb-3'>GitHub Campus Experts India</h4>
 			<Row className='align-items-center'>
 				<Col xs='12' md='6'><img className='img img-block mb-3' style={{
-					maxWidth: '85vw'
+					width: 'min(80%, 80vw)'
 				}} src='/assets/logo.png' alt={title} /></Col>
 				<Col xs='12' md='6' >People learn better when they can learn with a community of likeminded peers. Campus Experts are student leaders that strive to build diverse and inclusive spaces to learn skills, share their experiences, and build projects together. They can be found across the globe leading in-person and online conferences, meetups, and hackathons, and maintaining open source projects. A Campus Expert is trained to build a strong technical community, on campus. As well as training, Campus Experts have access to resources and support from GitHub, such as swag, sponsorship, and the opportunity to attend events like GitHub Universe.</Col>
 			</Row>
