@@ -38,24 +38,39 @@ const Discover = () => {
 			title='Discover'
 			description='Discover GitHub Campus Experts from India and explore events and more! Campus Experts are student leaders that strive to build and support diverse and inclusive spaces in technical communities.'
 			/>
-		<Row className='justify-content-center mt-auto mb-auto'>
-			<Col xs='12' md='8'>
+		<Row className='d-block d-lg-none justify-content-center mt-auto mb-auto'>
+			<Col xs='12'>
 				<h2 className='text-center mb-2'>Discover</h2>
 				<h6 className='text-center mb-3'>Explore campus experts and events!</h6>
 			</Col>
 		</Row>
-		<Row className='mt-3 justify-content-center'>
+		<Row className='mt-3 align-items-end'>
 			<Col xs='12' lg='9' className='order-2 mt-2 mt-lg-0'>
-				<InputGroup>
-					<InputGroupText>Search for a campus expert:</InputGroupText>
-					<Input className='bg-dark text-white' value={query.search ?? ''} onChange={handleChange} type='text' />
-				</InputGroup>
+				<Row className='align-items-center'>
+					<Col xs='12' className='d-none d-lg-block'>
+						<h2 className='text-center mb-2'>Discover</h2>
+						<h6 className='text-center mb-3'>Explore campus experts and events!</h6>
+					</Col>
+					<Col className='my-3 text-center' xs='5' lg='2'>
+						<img src='/assets/logo.png' className='img img-fluid' />
+					</Col>
+					<Col className='d-none d-lg-block text-center' lg='10'>
+						<h1>We are the campus experts!</h1>
+						Find your local campus expert to seek guidance.
+					</Col>
+				</Row>
+				<Col xs='12'>
+					<InputGroup>
+						<InputGroupText>Search for a campus expert:</InputGroupText>
+						<Input className='bg-dark text-white' value={query.search ?? ''} onChange={handleChange} type='text' />
+					</InputGroup>
+				</Col>
 			</Col>
 			<Col xs='12' lg='3' className='order-1'>
 				<Card className='text-dark'>
 					<CardHeader>
 						<CardTitle>
-							<h3>Explore</h3>
+							<h4>Explore</h4>
 						</CardTitle>
 						<CardSubtitle>
 							<h6>GitHub Campus Experts</h6>
@@ -86,6 +101,9 @@ const Discover = () => {
 						</CardText>
 					</CardBody>
 				</Card>
+			</Col>
+			<Col xs='12' className='order-3 mt-4'>
+				<h1 className='text-center'>In progress...</h1>
 			</Col>
 		</Row>
 	</Container>
