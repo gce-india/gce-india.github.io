@@ -15,7 +15,7 @@ import {
 	faGraduationCap,
 	faMapMarkerAlt
 } from '@fortawesome/free-solid-svg-icons';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import { Expert } from '../../schema/expert';
 import { Meta } from '..';
@@ -38,11 +38,11 @@ const Profile = (expert: Expert) => {
 						<CardHeader>
 							<CardImg className='rounded-3' title={expert.name} src={expert.picture} alt={expert.name} />
 							<CardTitle className='mt-3'>
-								<a className='no-decor'
+								<Link className='no-decor'
 									title={`${expert.name} - Local profile`}
-									href={location.pathname}>
+									to={location.pathname}>
 									<h5>{ expert.name }</h5>
-								</a>
+								</Link>
 							</CardTitle>
 							<CardSubtitle>
 								<a href={`https://github.com/${expert.username}`}
