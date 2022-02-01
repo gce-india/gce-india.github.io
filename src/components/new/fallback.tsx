@@ -133,8 +133,8 @@ const Profile = (expert: Expert) => {
 			</Col>
 		</Row>
 		<Row className='mt-3 justify-content-center'>
-			<Col xs='12' md='8' className='opacity-50'>
-				This profile was generated via the official GitHub Campus Expert website.
+			<Col style={{ fontSize: '0.9em' }} xs='12' md='8' className='opacity-50'>
+				This profile was generated via the official <a target='_blank' href='https://githubcampus.expert'>GitHub Campus Expert website</a>. Click here to <a target='_blank' href={`https://githubcampus.expert/${expert.username}`}>view the original profile</a>.
 				<br/>
 				Are you { expert.name }? <a href='https://github.com/gce-india/gce-india.github.io' target='_blank'>Create your own profile</a> on the { title } website.
 			</Col>
