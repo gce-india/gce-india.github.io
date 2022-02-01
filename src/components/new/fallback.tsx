@@ -119,8 +119,8 @@ const Profile = (expert: Expert) => {
 									className='code d-inline-block mb-2'
 									style={{
 										padding: 5,
-										backgroundColor: 'pink',
-										color: 'black',
+										backgroundColor: '#a8328f',
+										color: 'white',
 										borderRadius: 3,
 										width: 'max-content'
 									}}
