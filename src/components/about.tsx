@@ -5,8 +5,13 @@ import {
 } from 'reactstrap';
 
 import { title } from '../constants';
+import Meta from './meta';
 
 const About = () => <Container fluid='md mt-5 mb-5'>
+	<Meta
+		title='About'
+		description='About GitHub Campus Experts India. Campus Experts are student leaders that strive to build and support diverse and inclusive spaces in technical communities.'
+		/>
 	<Row style={{
 	minHeight: 400
 }} className='justify-content-center mt-auto mb-auto'>

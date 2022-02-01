@@ -5,10 +5,15 @@ import {
 } from 'reactstrap';
 
 import { formLink } from '../constants';
+import Meta from './meta';
 
 const Contact = () => <Container style={{
 		minHeight: 400
 	}} fluid='md mt-5 mb-5'>
+	<Meta
+		title='Contact Us'
+		description='Contact GitHub Campus Experts India. Campus Experts are student leaders that strive to build and support diverse and inclusive spaces in technical communities.'
+		/>
 	<Row className='justify-content-center mt-auto mb-auto'>
 		<Col xs='12' md='8'>
 			<h4 className='text-center mb-3'>Contact Us</h4>
