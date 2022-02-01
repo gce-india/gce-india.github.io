@@ -7,8 +7,7 @@ import {
 	CardTitle,
 	CardSubtitle,
 	CardImg,
-	CardBody,
-	CardText
+	CardBody
 } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -17,7 +16,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { useLocation } from 'react-router-dom';
 
-import { Expert } from './expert';
+import { Expert } from '../../schema/expert';
 import { Meta } from '..';
 import { title } from '../../constants';
 
