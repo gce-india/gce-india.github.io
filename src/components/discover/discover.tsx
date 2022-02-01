@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect, useState } from 'react';
+import { ChangeEvent } from 'react';
 import {
 	Container,
 	Row,
@@ -13,30 +13,15 @@ import {
 	InputGroupText,
 	Input
 } from 'reactstrap';
-import { useSearchParams, Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import useQueryString from 'use-query-string';
 
 import Meta from '../meta';
 
 const Discover = () => {
 	const navigate = useNavigate();
+	// @ts-ignore
 	const [query, setParams] = useQueryString(window.location, navigate);
-
-	// const [name, setName] = useState('');
-	// const [params, setParams] = useSearchParams();
-
-	// useEffect(() => {
-	// 	const search = params.get('search');
-	// 	if (search)
-	// 		setName(search);
-	// }, []);
-
-	// useEffect(() => {
-	// 	if (name)
-	// 		setParams({ search: name });
-	// 	else
-	// 		setParams({});
-	// }, [name]);
 
 	const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
 		const { target: { value } } = e;
