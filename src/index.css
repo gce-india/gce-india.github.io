@@ -24,7 +24,7 @@ body {
 	color: white;
 }
 
-code {
+code, .code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
 		monospace;
 }
@@ -41,6 +41,7 @@ a:focus {
 	filter: brightness(110%);
 }
 
+a.no-decor,
 a.btn {
 	text-decoration: none;
 }
