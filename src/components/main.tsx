@@ -1,4 +1,4 @@
-import { useRef, MouseEventHandler } from 'react';
+import { useRef } from 'react';
 import {
 	Container,
 	Row, Col
@@ -57,9 +57,8 @@ const Main = () => {
 		}
 	};
 
-	const playAudio: MouseEventHandler = async e => {
+	const playAudio = async () => {
 		const limit = 0.3;
-		e.preventDefault();
 
 		if (timeOut != null)
 			window.clearTimeout(timeOut);
@@ -68,18 +67,18 @@ const Main = () => {
 			audio.current!.volume = 0;
 			fade({ type: 'in', limit });
 			audioSymbol.current?.classList.add('show');
-			audioSymbol.current?.addEventListener('click', () => playAudio);
+			audioSymbol.current?.addEventListener('click', () => { playAudio(); });
 			timeOut = window.setTimeout(() => {
 				fade({ type: 'out' });
 				audioSymbol.current?.classList.remove('show');
-				audioSymbol.current?.removeEventListener('click', () => playAudio);
+				audioSymbol.current?.removeEventListener('click', () => { playAudio(); });
 			}, audio.current!.duration * 1000 - timeSlice * (limit / volUnit));
 			await audio.current?.play();
 			audio.current!.volume = 0;
 		} else {
 			fade({ type: 'out' });
 			audioSymbol.current?.classList.remove('show');
-			audioSymbol.current?.removeEventListener('click', () => playAudio);
+			audioSymbol.current?.removeEventListener('click', () => { playAudio(); });
 			timeOut = window.setTimeout(() => {
 				audio.current?.pause();
 				audio.current!.volume = 0;
@@ -102,7 +101,10 @@ const Main = () => {
 		<Row>
 			<Col className='text-center' >
 				<Col xs='6' md='4' lg='2' className='mx-auto my-4' >
-					<Link onClick={playAudio} to='/'><img src='/assets/logo.png' alt='Logo' className='w-100' /></Link>
+					<Link onClick={e => {
+						e.preventDefault();
+						return playAudio();
+					}} to='/'><img src='/assets/logo.png' alt='Logo' className='w-100' /></Link>
 				</Col>
 				<Col className='levitating'>
 					<Greetings />
