@@ -56,7 +56,7 @@ const Discover = () => {
 					</Col>
 					<Col className='d-none d-lg-block text-center' lg='10'>
 						<h1>We are the campus experts!</h1>
-						Find your local campus expert to seek guidance.
+						Find your local campus expert to connect.
 					</Col>
 				</Row>
 				<Col xs='12'>
