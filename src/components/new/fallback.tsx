@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import {
 	Container,
 	Row,
@@ -113,9 +114,9 @@ const Profile = (expert: Expert) => {
 					style={{ borderTop: '1px solid lightgrey' }} />
 					<div>
 						{
-							expert.skills.map((skill, i) => <>
+							expert.skills.map((skill, i) => <Fragment key={i}>
 								<span
-									key={i} className='code d-inline-block mb-2'
+									className='code d-inline-block mb-2'
 									style={{
 										padding: 5,
 										backgroundColor: 'pink',
@@ -126,7 +127,7 @@ const Profile = (expert: Expert) => {
 									>
 									{ skill }
 								</span>{' '}
-							</>)
+							</Fragment>)
 						}
 					</div>
 			</Col>
