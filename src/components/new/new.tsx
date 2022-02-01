@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 
 import Meta from '../meta';
 import './new.css';
-import { Expert, Module } from '../../schema/expert';
+import { Expert } from '../../schema/expert';
 import Fallback from './fallback';
 import { NotFound } from '..';
 import Loading from './loading';
@@ -29,7 +29,7 @@ const New = () => {
 		return <Loading>
 			<Meta
 				title={username}
-				/>
+			/>
 			Looking for&nbsp;<span className='code'><b>{ username }</b></span>...
 		</Loading>;
 	

@@ -11,7 +11,7 @@ const App = () => {
 			<Meta
 				description='The official homepage of GitHub Campus Experts India. Campus Experts are student leaders that strive to build and support diverse and inclusive spaces in technical communities.'
 				keywords={['GitHub', 'GitHub Campus', 'Campus Experts', 'India']}
-				/>
+			/>
 			<Header />
 			<Routes />
 			<Footer />

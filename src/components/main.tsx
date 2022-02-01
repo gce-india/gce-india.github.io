@@ -21,39 +21,39 @@ const Main = () => {
 	interface FadeType {
 		type: string,
 		limit?: number
-	};
+	}
 
 	const fade = ({ type, limit }: FadeType): void => {
 		switch (type) {
-			case 'in': {
-				const fadeIn = () => {
-					if (audio.current!.volume + volUnit >= limit!) {
+		case 'in': {
+			const fadeIn = () => {
+				if (audio.current!.volume + volUnit >= limit!) {
 						audio.current!.volume = limit!;
 						return;
-					}
-					if (audio.current?.volume !== limit) {
+				}
+				if (audio.current?.volume !== limit) {
 						audio.current!.volume += volUnit;
 						timeOut = window.setTimeout(fadeIn, timeSlice);
-					}
-				};
-				fadeIn();
-			}
+				}
+			};
+			fadeIn();
+		}
 			break;
-			case 'out': {
-				const fadeOut = () => {
-					if (audio.current!.volume - volUnit <= 0) {
+		case 'out': {
+			const fadeOut = () => {
+				if (audio.current!.volume - volUnit <= 0) {
 						audio.current!.volume = 0;
 						return;
-					}
-					if (audio.current!.volume >= 0) {
+				}
+				if (audio.current!.volume >= 0) {
 						audio.current!.volume -= volUnit;
 						timeOut = window.setTimeout(fadeOut, timeSlice);
-					}
-				};
-				fadeOut();
-			}
+				}
+			};
+			fadeOut();
+		}
 			break;
-			default:
+		default:
 		}
 	};
 
@@ -121,10 +121,10 @@ const Main = () => {
 							href='https://apply.githubcampus.expert/'
 							target='_blank'
 							className='btn d-block w-100 btn-light' style={{
-							backgroundColor: '#DD5522',
-							borderColor: '#DD5522',
-							color: 'white'
-						}}><b>🚩 Apply</b></a>
+								backgroundColor: '#DD5522',
+								borderColor: '#DD5522',
+								color: 'white'
+							}} rel="noreferrer"><b>🚩 Apply</b></a>
 					</Col>
 					<Col className='col-12 col-md-2 mb-1'>
 						<Link to='/discover' className='btn d-block w-100 btn-light text-black'><b>🎭 Discover</b></Link>

@@ -23,7 +23,7 @@ const Header = () => {
 						marginRight: '1ex'
 					}}
 					width={30}
-					/>
+				/>
 				{ title }
 			</NavbarBrand>
 			<button className='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbar'>

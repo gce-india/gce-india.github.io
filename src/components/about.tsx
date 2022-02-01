@@ -11,10 +11,10 @@ const About = () => <Container fluid='md mt-5 mb-5'>
 	<Meta
 		title='About'
 		description='About GitHub Campus Experts India. Campus Experts are student leaders that strive to build and support diverse and inclusive spaces in technical communities.'
-		/>
+	/>
 	<Row style={{
-	minHeight: 400
-}} className='justify-content-center mt-auto mb-auto'>
+		minHeight: 400
+	}} className='justify-content-center mt-auto mb-auto'>
 		<Col xs='12' md='8'>
 			<h4 className='text-center mb-3'>GitHub Campus Experts India</h4>
 			<Row className='align-items-center'>
@@ -37,7 +37,7 @@ const About = () => <Container fluid='md mt-5 mb-5'>
 			<img className='img img-block border border-3 border-danger rounded-3' width='100%' src='/assets/map.png'
 				alt='Campus Experts from India on the map'
 				title='Campus Experts from India on the map'
-				/>
+			/>
 			<img src='/assets/hi.gif' width='30px' style={{
 				position: 'absolute',
 				left: '75%',
@@ -60,7 +60,7 @@ const About = () => <Container fluid='md mt-5 mb-5'>
 		</Col>
 		<Col xs='12' md='8' className='mt-2'>
 			Our mission is to empower the technical communities in India by leading
-			the initiative to spread awareness and knowledge (<a target='_blank' href='https://translate.google.com/?sl=auto&tl=en&text=%E0%A4%95%E0%A5%8D%E0%A4%AF%E0%A5%8B%E0%A4%82%E0%A4%95%E0%A4%BF%20%E0%A4%9C%E0%A5%8D%E0%A4%9E%E0%A4%BE%E0%A4%A8%20%E0%A4%AC%E0%A4%BE%E0%A4%82%E0%A4%9F%E0%A4%A8%E0%A5%87%20%E0%A4%B8%E0%A5%87%20%E0%A4%AC%E0%A5%9D%E0%A4%A4%E0%A4%BE%20%E0%A4%B9%E0%A5%88&op=translate'>क्योंकि ज्ञान बांटने से बढ़ता है</a>).
+			the initiative to spread awareness and knowledge (<a target='_blank' href='https://translate.google.com/?sl=auto&tl=en&text=%E0%A4%95%E0%A5%8D%E0%A4%AF%E0%A5%8B%E0%A4%82%E0%A4%95%E0%A4%BF%20%E0%A4%9C%E0%A5%8D%E0%A4%9E%E0%A4%BE%E0%A4%A8%20%E0%A4%AC%E0%A4%BE%E0%A4%82%E0%A4%9F%E0%A4%A8%E0%A5%87%20%E0%A4%B8%E0%A5%87%20%E0%A4%AC%E0%A5%9D%E0%A4%A4%E0%A4%BE%20%E0%A4%B9%E0%A5%88&op=translate' rel="noreferrer">क्योंकि ज्ञान बांटने से बढ़ता है</a>).
 			We wish to fulfill the dream of seeing India emerge as a superpower, from
 			a developing nation to a developed nation, and eliminate the problems students
 			face.
@@ -80,12 +80,12 @@ const About = () => <Container fluid='md mt-5 mb-5'>
 			You can discover your local campus experts from the official GitHub Campus Experts website.
 		</Col>
 		<Col xs='12' md='8' className='text-center mt-1'>
-			<a href='http://githubcampus.expert/' target='_blank' className='btn text-center btn-danger'>🚩 GitHub Campus Experts</a>
+			<a href='http://githubcampus.expert/' target='_blank' className='btn text-center btn-danger' rel="noreferrer">🚩 GitHub Campus Experts</a>
 		</Col>
 	</Row>
 	<Row className='mt-3 justify-content-center'>
 		<Col xs='12' md='8' className='opacity-50'>
-			Pssst... If you are also interested in becoming a campus expert, apply <a href='https://apply.githubcampus.expert/' target='_blank'>here</a>.
+			Pssst... If you are also interested in becoming a campus expert, apply <a href='https://apply.githubcampus.expert/' target='_blank' rel="noreferrer">here</a>.
 			Applications open twice a year, so hurry up!
 		</Col>
 	</Row>

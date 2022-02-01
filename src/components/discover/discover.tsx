@@ -32,12 +32,12 @@ const Discover = () => {
 	};
 
 	return <Container style={{
-			minHeight: 400
-		}} fluid='md mt-5 mb-5'>
+		minHeight: 400
+	}} fluid='md mt-5 mb-5'>
 		<Meta
 			title='Discover'
 			description='Discover GitHub Campus Experts from India and explore events and more! Campus Experts are student leaders that strive to build and support diverse and inclusive spaces in technical communities.'
-			/>
+		/>
 		<Row className='d-block d-lg-none justify-content-center mt-auto mb-auto'>
 			<Col xs='12'>
 				<h2 className='text-center mb-2'>Discover</h2>
@@ -79,23 +79,23 @@ const Discover = () => {
 					<CardBody>
 						<CardText>
 							<a target='_blank' href='https://githubcampus.expert/events'
-								className='btn mb-1 d-block btn-success text-light'
-								>
+								className='btn mb-1 d-block btn-success text-light' rel="noreferrer"
+							>
 								🎭 Global Events
 							</a>
 							<a target='_blank' href='https://education.github.com/experts'
-								className='btn mb-1 d-block btn-primary text-light'
-								>
+								className='btn mb-1 d-block btn-primary text-light' rel="noreferrer"
+							>
 								🚩 Experts
 							</a>
 							<a target='_blank' href='https://education.github.com/pack/offers'
-								className='btn mb-1 d-block btn-secondary text-light'
-								>
+								className='btn mb-1 d-block btn-secondary text-light' rel="noreferrer"
+							>
 								💻 Developer Pack
 							</a>
 							<a target='_blank' href='https://www.twitch.tv/githubeducation/schedule'
-								className='btn mb-1 d-block btn-danger text-light'
-								>
+								className='btn mb-1 d-block btn-danger text-light' rel="noreferrer"
+							>
 								📺 Campus TV
 							</a>
 						</CardText>
@@ -106,7 +106,7 @@ const Discover = () => {
 				<h1 className='text-center'>In progress...</h1>
 			</Col>
 		</Row>
-	</Container>
+	</Container>;
 };
 
 export default Discover;

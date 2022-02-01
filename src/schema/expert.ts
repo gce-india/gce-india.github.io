@@ -1,4 +1,4 @@
-interface Module_ { name: string, img: string };
+interface Module_ { name: string, img: string }
 
 interface Expert_ {
 	name: string,
@@ -10,7 +10,7 @@ interface Expert_ {
 	modules: Module[],
 	about: string[],
 	skills: string[]
-};
+}
 
 export type Module = Module_;
 export type Expert = Expert_;

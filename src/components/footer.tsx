@@ -47,7 +47,7 @@ const Footer = () => {
 			<Col>
 				Made with <span className='heart'>❤</span> by <a style={{
 					color: 'pink'
-				}} href='https://www.paramsid.com' target='_blank'>Param</a>.
+				}} href='https://www.paramsid.com' target='_blank' rel="noreferrer">Param</a>.
 			</Col>
 		</Foot>
 		<Container style={{
@@ -56,10 +56,10 @@ const Footer = () => {
 		}}>
 			<Row className='text-center'>
 				<Col xs='12' className='offset-md-8 col-md-2 mb-2'>
-					<a href='https://education.github.com/experts/terms' target='_blank'>Terms of Service</a>
+					<a href='https://education.github.com/experts/terms' target='_blank' rel="noreferrer">Terms of Service</a>
 				</Col>
 				<Col xs='12' className='col-md-2 mb-2'>
-					<a href='https://education.github.com/experts/' target='_blank'>Campus Experts</a>
+					<a href='https://education.github.com/experts/' target='_blank' rel="noreferrer">Campus Experts</a>
 				</Col>
 			</Row>
 		</Container>

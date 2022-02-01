@@ -37,7 +37,8 @@ module.exports = {
 		],
 		quotes: [
 			'error',
-			'single'
+			'single',
+			{ "allowTemplateLiterals": true }
 		],
 		semi: [
 			'error',
@@ -49,8 +50,13 @@ module.exports = {
 		],
 		curly: [
 			'warn',
-			'multi-or-nest',
+			'multi',
 			'consistent'
-		]
+		],
+		'react/no-unescaped-entities': 'off',
+		'@typescript-eslint/ban-ts-ignore': 'off',
+		'@typescript-eslint/ban-ts-comment': 'off',
+		'@typescript-eslint/no-non-null-assertion': 'off',
+		'@typescript-eslint/ban-types': 'off'
 	}
 };

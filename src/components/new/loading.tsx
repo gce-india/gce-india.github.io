@@ -19,12 +19,12 @@ const Loading = ({ children }: { children?: string | ReactElement | (string | Re
 			</Row>
 			{
 				children ?
-				<Row className='justify-content-center'>
-					<Col className='d-flex justify-content-center'>
-						{ children }
-					</Col>
-				</Row>
-				: ''
+					<Row className='justify-content-center'>
+						<Col className='d-flex justify-content-center'>
+							{ children }
+						</Col>
+					</Row>
+					: ''
 			}
 		</Col>
 	</Row>

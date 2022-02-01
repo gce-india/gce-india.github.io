@@ -11,7 +11,7 @@ const NotFound = () => <Container fluid='md mt-5 mb-5'>
 	<Meta
 		title='Not Found'
 		description='404 - Not Found! This is the official website of GitHub Campus Experts India. Campus Experts are student leaders that strive to build and support diverse and inclusive spaces in technical communities.'
-		/>
+	/>
 	<Row style={{
 		minHeight: 400
 	}} className='align-items-center mt-auto mb-auto'>

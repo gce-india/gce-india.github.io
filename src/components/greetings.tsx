@@ -1,4 +1,4 @@
-import { default as styled, css, keyframes } from 'styled-components';
+import { default as styled, keyframes } from 'styled-components';
 
 import { animation as anim, greetings } from '../constants';
 

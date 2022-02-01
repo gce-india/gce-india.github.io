@@ -27,7 +27,7 @@ const Profile = (expert: Expert) => {
 	return <Container fluid='md mt-5 mb-5'>
 		<Meta
 			title={`${expert.name} - ${expert.username}`}
-			/>
+		/>
 		<Row style={{
 			minHeight: 400
 		}} className='justify-content-center mt-auto mb-auto'>
@@ -48,7 +48,7 @@ const Profile = (expert: Expert) => {
 								<a href={`https://github.com/${expert.username}`}
 									target='_blank'
 									title={`${expert.name} - GitHub profile`}
-									className='no-decor'>
+									className='no-decor' rel="noreferrer">
 									<code><b>{ expert.username }</b></code>
 								</a>
 							</CardSubtitle>
@@ -92,9 +92,9 @@ const Profile = (expert: Expert) => {
 								{
 									expert.modules
 										.map((mod, i) => <img key={i} className='w-25 p-1'
-												src={mod.img} alt={mod.name} title={mod.name}
-												style={{ cursor: 'pointer' }}
-											/>
+											src={mod.img} alt={mod.name} title={mod.name}
+											style={{ cursor: 'pointer' }}
+										/>
 										)
 								}
 							</div>
@@ -112,31 +112,31 @@ const Profile = (expert: Expert) => {
 				<h4>Skills</h4>
 				<div className='mt-3 mb-4'
 					style={{ borderTop: '1px solid lightgrey' }} />
-					<div>
-						{
-							expert.skills.map((skill, i) => <Fragment key={i}>
-								<span
-									className='code d-inline-block mb-2'
-									style={{
-										padding: 5,
-										backgroundColor: '#a8328f',
-										color: 'white',
-										borderRadius: 3,
-										width: 'max-content'
-									}}
-									>
-									{ skill }
-								</span>{' '}
-							</Fragment>)
-						}
-					</div>
+				<div>
+					{
+						expert.skills.map((skill, i) => <Fragment key={i}>
+							<span
+								className='code d-inline-block mb-2'
+								style={{
+									padding: 5,
+									backgroundColor: '#a8328f',
+									color: 'white',
+									borderRadius: 3,
+									width: 'max-content'
+								}}
+							>
+								{ skill }
+							</span>{' '}
+						</Fragment>)
+					}
+				</div>
 			</Col>
 		</Row>
 		<Row className='mt-3 justify-content-center'>
 			<Col style={{ fontSize: '0.9em' }} xs='12' md='8' className='opacity-50'>
-				This profile was generated via the official <a target='_blank' href='https://githubcampus.expert'>GitHub Campus Expert website</a>. Click here to <a target='_blank' href={`https://githubcampus.expert/${expert.username}`}>view the original profile</a>.
+				This profile was generated via the official <a target='_blank' href='https://githubcampus.expert' rel="noreferrer">GitHub Campus Expert website</a>. Click here to <a target='_blank' href={`https://githubcampus.expert/${expert.username}`} rel="noreferrer">view the original profile</a>.
 				<br/>
-				Are you { expert.name }? <a href='https://github.com/gce-india/gce-india.github.io' target='_blank'>Create your own profile</a> on the { title } website.
+				Are you { expert.name }? <a href='https://github.com/gce-india/gce-india.github.io' target='_blank' rel="noreferrer">Create your own profile</a> on the { title } website.
 			</Col>
 		</Row>
 	</Container>;
