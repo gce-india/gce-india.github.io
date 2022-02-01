@@ -29,7 +29,9 @@ const Contact = () => <Container style={{
 		<Col xs='12' md='8' className='text-center'>
 			<iframe src={formLink} style={{
 				width: '95%',
-				minHeight: 400
+				minHeight: 400,
+				border: '2px solid red',
+				backgroundColor: 'white'
 			}}></iframe>
 		</Col>
 	</Row>
