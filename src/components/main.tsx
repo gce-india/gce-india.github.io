@@ -33,7 +33,7 @@ const Main = () => {
 					}
 					if (audio.current?.volume !== limit) {
 						audio.current!.volume += volUnit;
-						timeOut = setTimeout(fadeIn, timeSlice);
+						timeOut = window.setTimeout(fadeIn, timeSlice);
 					}
 				};
 				fadeIn();
@@ -47,7 +47,7 @@ const Main = () => {
 					}
 					if (audio.current!.volume >= 0) {
 						audio.current!.volume -= volUnit;
-						timeOut = setTimeout(fadeOut, timeSlice);
+						timeOut = window.setTimeout(fadeOut, timeSlice);
 					}
 				};
 				fadeOut();
@@ -60,14 +60,14 @@ const Main = () => {
 	const playAudio = async () => {
 		const limit = 0.3;
 		if (timeOut != null)
-			clearInterval(timeOut);
+			window.clearTimeout(timeOut);
 		if (audio.current?.paused) {
 			audio.current!.currentTime = 0;
 			audio.current!.volume = 0;
 			fade({ type: 'in', limit });
 			audioSymbol.current?.classList.add('show');
 			audioSymbol.current?.addEventListener('click', playAudio);
-			timeOut = setTimeout(() => {
+			timeOut = window.setTimeout(() => {
 				fade({ type: 'out' });
 				audioSymbol.current?.classList.remove('show');
 				audioSymbol.current?.removeEventListener('click', playAudio);
@@ -78,7 +78,7 @@ const Main = () => {
 			fade({ type: 'out' });
 			audioSymbol.current?.classList.remove('show');
 			audioSymbol.current?.removeEventListener('click', playAudio);
-			timeOut = setTimeout(() => {
+			timeOut = window.setTimeout(() => {
 				audio.current?.pause();
 				audio.current!.volume = 0;
 				audio.current!.currentTime = 0;
