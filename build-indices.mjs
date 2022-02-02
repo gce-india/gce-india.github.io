@@ -4,6 +4,9 @@ import 'zx/globals';
 import glob from 'glob';
 import yaml from 'yaml';
 
+fs.ensureDirSync(path.join(__dirname, 'public', 'users'));
+fs.ensureDirSync(path.join(__dirname, 'public', 'resources'));
+
 const p = path.join(__dirname, 'public', 'users', '*') + path.sep;
 glob(p, {}, async (e, files) => {
 	if (e != null) {
