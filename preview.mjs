@@ -1,4 +1,5 @@
 #!/usr/bin/env zx
+import 'zx/globals';
 
 const BUILD_DIR = path.join(__dirname, 'build') + path.sep;
 

@@ -16,3 +16,6 @@ dist-ssr/
 # Temporary files
 tmp/
 temp/
+
+# Generated indices
+public/resources/
