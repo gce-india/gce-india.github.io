@@ -3,7 +3,7 @@ import cheerio from 'cheerio';
 import yaml from 'yaml';
 
 import { Expert, Module } from '../schema/expert';
-import ExpertMini from '../schema/expert-mini';
+import { ExpertMini, ExternalExpertMini } from '../schema/expert-mini';
 import { Expert as LocalExpert } from '../schema/expert-local';
 
 const getGlobalExpertInfo_ = async (username: string) => {
@@ -99,36 +99,23 @@ const getExpertInfo_ = async (username: string, type?: string): Promise<ExpertOu
 
 const getExpertIndex_ = async (): Promise<{
 	users: {
-		expert: ExpertMini | { username: string },
+		expert: ExpertMini | ExternalExpertMini,
 		type: string
 	}[]
 }> => {
-	const localResp = await axios.get('/resources/index.yml');
-	const localIndex: {
-		users: ExpertMini[]
-	} = yaml.parse(localResp.data);
+	const resp = await axios.get('/resources/index.yml');
+	const index: {
+		users: (ExpertMini | ExternalExpertMini)[]
+	} = yaml.parse(resp.data);
 
-	const localExperts = localIndex.users.map(e => ({
-		expert: e,
-		type: 'local'
-	}));
-
-	const globalResp = await axios.get('/local/index.yml');
-	const globalIndex: {
-		users: string[]
-	} = yaml.parse(globalResp.data);
-
-	const globalExperts = globalIndex.users.map(e => ({
-		expert: {
-			username: e
-		},
-		type: 'external'
+	const experts = index.users.map(e => ({
+		expert: e.local ? e as ExpertMini : e as ExternalExpertMini,
+		type: e.local ? 'local' : 'external'
 	}));
 
 	return {
 		users: [
-			...localExperts,
-			...globalExperts
+			...experts
 		]
 	};
 };

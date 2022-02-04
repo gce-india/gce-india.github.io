@@ -18,7 +18,7 @@ import useQueryString from 'use-query-string';
 import { Bars } from 'react-loader-spinner';
 
 import Meta from '../meta';
-import ExpertMini from '../../schema/expert-mini';
+import { ExpertMini, ExternalExpertMini } from '../../schema/expert-mini';
 import { getExpertIndex } from '../../services/campus-expert';
 import LocalExpert from './local-expert';
 import ExternalExpert from './external-expert';
@@ -28,7 +28,7 @@ const Discover = () => {
 	// @ts-ignore
 	const [query, setParams] = useQueryString(window.location, navigate);
 	const [users, setUsers] = useState<{
-		expert: ExpertMini | { username: string },
+		expert: ExpertMini | ExternalExpertMini,
 		type: string
 	}[]>([]);
 
@@ -126,7 +126,7 @@ const Discover = () => {
 						users.length > 0 ?
 						users.map((u, i) => u.type === 'local' ?
 							<LocalExpert expert={u.expert as ExpertMini} key={i} />
-							: <ExternalExpert expert={u.expert as { username: string }} key={i} />
+							: <ExternalExpert expert={u.expert as ExternalExpertMini} key={i} />
 						)
 						: <div className='d-flex justify-content-center'><Bars color='yellow' /></div>
 					}

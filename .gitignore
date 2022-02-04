@@ -19,3 +19,7 @@ temp/
 
 # Generated indices
 public/resources/
+
+# JavaScript
+*.js
+*.jsx

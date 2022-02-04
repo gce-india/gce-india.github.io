@@ -13,12 +13,12 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFlag, faGraduationCap, faInbox, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 
-import ExpertMini from '../../schema/expert-mini';
+import { ExpertMini } from '../../schema/expert-mini';
 
 const Expert = ({ expert }: {
 	expert: ExpertMini
 }) => {
-	return <Col className='text-dark' xs='12' md='6' lg='3'>
+	return <Col className='text-dark mb-3' xs='12' md='6' lg='3'>
 		<Card>
 			<CardHeader className='text-center py-3'>
 				<Link to={`/${encodeURIComponent(expert.username)}`}>
