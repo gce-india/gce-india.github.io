@@ -1,7 +1,9 @@
 import axios from 'axios';
 import cheerio from 'cheerio';
+import yaml from 'yaml';
 
 import { Expert, Module } from '../schema/expert';
+import { Expert as LocalExpert } from '../schema/expert-local';
 
 const getExpertInfo_ = async (username: string) => {
 	const { data: html } = await axios.get(`https://githubcampus.expert/${encodeURIComponent(username!)}`);
@@ -37,6 +39,23 @@ const getExpertInfo_ = async (username: string) => {
 	// console.log(data);
 
 	return expert;
-}; 
+};
+
+const getLocalExpertInfo_ = async (username: string) => {
+	const USER_DIR = `/users/${encodeURIComponent(username!)}`;
+	const { data: info } = await axios.get(`${USER_DIR}/info.yml`);
+	const { data: about } = await axios.get(`${USER_DIR}/about.md`);
+	const data = yaml.parse(info);
+	
+	const expert: LocalExpert = {
+		username,
+		...data,
+		about
+	};
+	// console.log(expert);
+
+	return expert;
+};
 
 export const getExpertInfo = getExpertInfo_;
+export const getLocalExpertInfo = getLocalExpertInfo_;

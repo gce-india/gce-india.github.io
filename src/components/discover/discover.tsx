@@ -34,7 +34,7 @@ const Discover = () => {
 
 	useEffect(() => {
 		(async () => {
-			const resp = await axios.get('resources/index.yml');
+			const resp = await axios.get('/resources/index.yml');
 			const index: {
 				users: ExpertMini[]
 			} = yaml.parse(resp.data);
@@ -131,18 +131,18 @@ const Discover = () => {
 							<Col className='text-dark' xs='12' md='6' lg='3'>
 								<Card>
 									<CardHeader className='text-center py-3'>
-										<Link to={`/${u.username}`}>
+										<Link to={`/${encodeURIComponent(u.username)}`}>
 											<CardImg className='cursor-pointer rounded-3' title={u.name} src={u.avatar} alt={u.name} />
 										</Link>
 										<CardTitle className='mt-1'>
 											<Link className='no-decor'
 												title={`${u.name} - Local profile`}
-												to={`/${u.username}`}>
+												to={`/${encodeURIComponent(u.username)}`}>
 												<h5>{ u.name }</h5>
 											</Link>
 										</CardTitle>
 										<CardSubtitle>
-											<Link to={`/${u.username}`}
+											<Link to={`/${encodeURIComponent(u.username)}`}
 												title={`${u.name} - Local profile`}
 												className='no-decor'>
 												<code><b>{ u.username }</b></code>

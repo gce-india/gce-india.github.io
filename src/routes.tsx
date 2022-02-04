@@ -17,6 +17,7 @@ const CustomRoutes = () => <Routes>
 	<Route path='/discover' element={<Discover />} />
 	<Route path='/about' element={<About />} />
 	<Route path='/contact' element={<Contact />} />
+	<Route path='/global/:username' element={<New fallback />} />
 	<Route path='/:username' element={<New />} />
 	<Route path='*' element={<NotFound />} />
 </Routes>;

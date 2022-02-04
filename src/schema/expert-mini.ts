@@ -4,7 +4,7 @@ interface ExpertMini {
     university: string,
     location: string,
     country: string,
-    avatar?: string,
+    avatar: string,
     communities: string[]
 };
 
