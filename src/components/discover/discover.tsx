@@ -122,32 +122,22 @@ const Discover = () => {
 				</Card>
 			</Col>
 			<Col xs='12' className='order-3 mt-4'>
-				{/* <Row ref={listContainer}> */}
-					{/* {
-						users.length > 0 ?
-						users.map((u, i) => u.type === 'local' ?
-							<LocalExpert expert={u.expert as ExpertMini} key={i} />
-							: <ExternalExpert expert={u.expert as ExternalExpertMini} key={i} />
-						)
-						: <div className='d-flex justify-content-center'><Bars color='yellow' /></div>
-					} */}
-					{
-						users.length > 0 ?
-						<List
-							itemsRenderer={(items, ref) => <div className='row' ref={ref}>{ items }</div>}
-							itemRenderer={(i, key) => {
-								const u = users[i];
+				{
+					users.length > 0 ?
+					<List
+						itemsRenderer={(items, ref) => <div className='row' ref={ref}>{ items }</div>}
+						itemRenderer={(i, key) => {
+							const u = users[i];
 
-								return u.type === 'local' ?
-								<LocalExpert expert={u.expert as ExpertMini} key={key} />
-								: <ExternalExpert expert={u.expert as ExternalExpertMini} key={key} />;
-							}}
-							length={users.length}
-							type='simple'
-							/>
-						: <div className='d-flex justify-content-center'><Bars color='yellow' /></div>
-					}
-				{/* </Row> */}
+							return u.type === 'local' ?
+							<LocalExpert expert={u.expert as ExpertMini} key={key} />
+							: <ExternalExpert expert={u.expert as ExternalExpertMini} key={key} />;
+						}}
+						length={users.length}
+						type='simple'
+						/>
+					: <div className='d-flex justify-content-center'><Bars color='yellow' /></div>
+				}
 			</Col>
 		</Row>
 	</Container>;
