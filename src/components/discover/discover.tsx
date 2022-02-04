@@ -1,43 +1,40 @@
-import { ChangeEvent, Fragment, useEffect, useState } from 'react';
+import { ChangeEvent, useEffect, Fragment, useState } from 'react';
 import {
 	Container,
 	Row,
 	Col,
 	Card,
 	CardHeader,
-	CardImg,
 	CardTitle,
 	CardSubtitle,
 	CardBody,
 	CardText,
 	InputGroup,
 	InputGroupText,
-	Input,
-	Badge
+	Input
 } from 'reactstrap';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import useQueryString from 'use-query-string';
 import { Bars } from 'react-loader-spinner';
-import axios from 'axios';
-import yaml from 'yaml';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFlag, faGraduationCap, faInbox, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 
 import Meta from '../meta';
 import ExpertMini from '../../schema/expert-mini';
+import { getExpertIndex } from '../../services/campus-expert';
+import LocalExpert from './local-expert';
+import ExternalExpert from './external-expert';
 
 const Discover = () => {
 	const navigate = useNavigate();
 	// @ts-ignore
 	const [query, setParams] = useQueryString(window.location, navigate);
-	const [users, setUsers] = useState<ExpertMini[]>([]);
+	const [users, setUsers] = useState<{
+		expert: ExpertMini | { username: string },
+		type: string
+	}[]>([]);
 
 	useEffect(() => {
 		(async () => {
-			const resp = await axios.get('/resources/index.yml');
-			const index: {
-				users: ExpertMini[]
-			} = yaml.parse(resp.data);
+			const index = await getExpertIndex();
 			setUsers(index.users);
 		})().catch(e => {
 			console.error(e);
@@ -124,92 +121,16 @@ const Discover = () => {
 				</Card>
 			</Col>
 			<Col xs='12' className='order-3 mt-4'>
-				{
-					users.length > 0 ?
-					<>
-						{ users.map((u, i) => <Fragment key={i}>
-							<Col className='text-dark' xs='12' md='6' lg='3'>
-								<Card>
-									<CardHeader className='text-center py-3'>
-										<Link to={`/${encodeURIComponent(u.username)}`}>
-											<CardImg className='cursor-pointer rounded-3' title={u.name} src={u.avatar} alt={u.name} />
-										</Link>
-										<CardTitle className='mt-1'>
-											<Link className='no-decor'
-												title={`${u.name} - Local profile`}
-												to={`/${encodeURIComponent(u.username)}`}>
-												<h5>{ u.name }</h5>
-											</Link>
-										</CardTitle>
-										<CardSubtitle>
-											<Link to={`/${encodeURIComponent(u.username)}`}
-												title={`${u.name} - Local profile`}
-												className='no-decor'>
-												<code><b>{ u.username }</b></code>
-											</Link>
-										</CardSubtitle>
-									</CardHeader>
-									<CardBody>
-										<div
-											title={u.university}
-											style={{
-												fontSize: '0.8em',
-												textOverflow: 'ellipsis',
-												overflow: 'hidden',
-												whiteSpace: 'nowrap'
-											}}>
-											<FontAwesomeIcon
-												style={{ marginRight: 5 }}
-												icon={faGraduationCap} />
-											{ u.university }
-										</div>
-										<div
-											title={u.location}
-											style={{
-												fontSize: '0.8em',
-												textOverflow: 'ellipsis',
-												overflow: 'hidden',
-												whiteSpace: 'nowrap'
-											}}>
-											<FontAwesomeIcon
-												style={{
-													marginLeft: 4,
-													marginRight: 8
-												}}
-												icon={faMapMarkerAlt} />
-											{ u.location }
-										</div>
-										<div
-											title={u.country}
-											style={{
-												fontSize: '0.8em',
-												textOverflow: 'ellipsis',
-												overflow: 'hidden',
-												whiteSpace: 'nowrap'
-											}}>
-											<FontAwesomeIcon
-												style={{
-													marginLeft: 2,
-													marginRight: 8
-												}}
-												icon={faFlag} />
-											{ u.country }
-										</div>
-										<div className='my-3'
-											style={{ borderTop: '1px solid lightgrey' }} />
-										<FontAwesomeIcon icon={faInbox} />{' '}
-										{
-											u.communities.map((c, i) => <Fragment key={i}>
-												<Badge color='secondary'>{ c }</Badge>{' '}
-											</Fragment>)
-										}
-									</CardBody>
-								</Card>
-							</Col>
-						</Fragment>) }
-					</>
-					: <div className='d-flex justify-content-center'><Bars color='yellow' /></div>
-				}
+				<Row>
+					{
+						users.length > 0 ?
+						users.map((u, i) => u.type === 'local' ?
+							<LocalExpert expert={u.expert as ExpertMini} key={i} />
+							: <ExternalExpert expert={u.expert as { username: string }} key={i} />
+						)
+						: <div className='d-flex justify-content-center'><Bars color='yellow' /></div>
+					}
+				</Row>
 			</Col>
 		</Row>
 	</Container>;

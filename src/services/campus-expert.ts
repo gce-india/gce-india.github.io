@@ -3,6 +3,7 @@ import cheerio from 'cheerio';
 import yaml from 'yaml';
 
 import { Expert, Module } from '../schema/expert';
+import ExpertMini from '../schema/expert-mini';
 import { Expert as LocalExpert } from '../schema/expert-local';
 
 const getGlobalExpertInfo_ = async (username: string) => {
@@ -96,6 +97,43 @@ const getExpertInfo_ = async (username: string, type?: string): Promise<ExpertOu
 	}
 };
 
+const getExpertIndex_ = async (): Promise<{
+	users: {
+		expert: ExpertMini | { username: string },
+		type: string
+	}[]
+}> => {
+	const localResp = await axios.get('/resources/index.yml');
+	const localIndex: {
+		users: ExpertMini[]
+	} = yaml.parse(localResp.data);
+
+	const localExperts = localIndex.users.map(e => ({
+		expert: e,
+		type: 'local'
+	}));
+
+	const globalResp = await axios.get('/local/index.yml');
+	const globalIndex: {
+		users: string[]
+	} = yaml.parse(globalResp.data);
+
+	const globalExperts = globalIndex.users.map(e => ({
+		expert: {
+			username: e
+		},
+		type: 'external'
+	}));
+
+	return {
+		users: [
+			...localExperts,
+			...globalExperts
+		]
+	};
+};
+
 export const getGlobalExpertInfo = getGlobalExpertInfo_;
 export const getLocalExpertInfo = getLocalExpertInfo_;
 export const getExpertInfo = getExpertInfo_;
+export const getExpertIndex = getExpertIndex_;
