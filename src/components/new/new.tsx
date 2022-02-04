@@ -20,7 +20,7 @@ const New = () => {
 			setExpert(data);
 			setDone(true);
 		})().catch(e => {
-			console.log(e);
+			console.error(e);
 			setDone(true);
 		});
 	}, []);

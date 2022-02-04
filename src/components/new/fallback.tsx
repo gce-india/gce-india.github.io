@@ -36,7 +36,7 @@ const Profile = (expert: Expert) => {
 					<Card className='py-3 text-black'
 						style={{ minHeight: '480px' }}>
 						<CardHeader>
-							<CardImg className='rounded-3' title={expert.name} src={expert.picture} alt={expert.name} />
+							<CardImg className='cursor-pointer rounded-3' title={expert.name} src={expert.picture} alt={expert.name} />
 							<CardTitle className='mt-3'>
 								<Link className='no-decor'
 									title={`${expert.name} - Local profile`}
