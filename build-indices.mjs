@@ -40,7 +40,7 @@ glob(p, {}, async (e, files) => {
 				location: info.location,
 				country: info.country,
 				avatar: info.avatar,
-				communities: info.communities.join(', ')
+				communities: info.communities
 			};
 
 			return user;
