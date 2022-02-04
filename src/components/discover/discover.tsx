@@ -189,7 +189,7 @@ const Discover = () => {
 											}}>
 											<FontAwesomeIcon
 												style={{
-													marginLeft: 4,
+													marginLeft: 2,
 													marginRight: 8
 												}}
 												icon={faFlag} />
