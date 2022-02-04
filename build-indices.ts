@@ -3,6 +3,9 @@ import path from 'path';
 import glob from 'glob';
 import yaml from 'yaml';
 
+import { Expert as LocalExpert } from './src/schema/expert-local';
+import { Expert as ExternalExpert } from './src/schema/expert';
+import { ExpertMini, ExternalExpertMini } from './src/schema/expert-mini';
 import { getGlobalExpertInfo } from './src/services/campus-expert';
 
 fs.ensureDirSync(path.join(__dirname, 'public', 'local'));
@@ -11,13 +14,11 @@ fs.ensureDirSync(path.join(__dirname, 'public', 'resources'));
 
 const p = path.join(__dirname, 'public', 'users', '*') + path.sep;
 glob(p, {}, async (e: Error | null, files: string[]) => {
-	if (e != null) {
-		console.error(e.message, e);
-		process.exit(1);
-	}
+	if (e != null)
+		throw e;
 
 	try {
-		const users: any[] = await Promise.all(files.map(async f => {
+		const users: (ExpertMini | ExternalExpertMini)[] = await Promise.all(files.map(async f => {
 			const o = {
 				username: path.basename(f),
 				path: path.relative(path.join(__dirname, 'public'), f)
@@ -27,22 +28,27 @@ glob(p, {}, async (e: Error | null, files: string[]) => {
 				'about.md',
 				'info.yml'
 			];
-			if (!filesToCheck.map(file => fs.existsSync(path.join(f, file))).reduce((a, b) => a && b)) {
-				console.error(`Invalid contents of directory '${path.join('public', o.path)}'!`);
-				process.exit(1);
-			}
+			if (!filesToCheck.map(file => fs.existsSync(path.join(f, file))).reduce((a, b) => a && b))
+				throw new Error(`Invalid contents of directory '${path.join('public', o.path)}'!`);
 
 			const infoFile = path.join(f, 'info.yml');
-			const info = yaml.parse((await fs.readFile(infoFile)).toString());
+			const info: LocalExpert = yaml.parse((await fs.readFile(infoFile)).toString());
 
-			const user = {
+			if (
+				!['name', 'university', 'location', 'country', 'avatar', 'email'].map(k => info[k] != null).reduce((a, b) => a && b)
+				||
+				!['communities', 'skills', 'social'].map(k => info[k] == null || Array.isArray(info[k])).reduce((a, b) => a && b)
+			)
+				throw new Error(`Invalid values for '${o.username}'.`);
+
+			const user: ExpertMini = {
 				username: o.username,
 				name: info.name,
 				university: info.university,
 				location: info.location,
 				country: info.country,
 				avatar: info.avatar,
-				communities: info.communities,
+				communities: info.communities || [],
 				local: true
 			};
 
@@ -56,13 +62,13 @@ glob(p, {}, async (e: Error | null, files: string[]) => {
 				users: string[]
 			} = yaml.parse((await fs.readFile(externalIndexFile)).toString());
 
-			const externalIndex = await Promise.all(externalUsers
+			const externalIndex: ExternalExpertMini[] = await Promise.all(externalUsers
 				.filter(u => localUsernames.indexOf(u) < 0)
 				.map(async username => {
 					try {
 						const data = await getGlobalExpertInfo(username);
 					
-						const user = {
+						const user: ExternalExpertMini = {
 							name: data.name,
 							username: data.username,
 							picture: data.picture,
@@ -73,8 +79,7 @@ glob(p, {}, async (e: Error | null, files: string[]) => {
 
 						return user;
 					} catch (e) {
-						console.error(`Error for username: ${username}! Official profile not found on githubcampus.expert.`);
-						process.exit(1);
+						throw new Error(`Error for username: ${username}! Official profile not found on githubcampus.expert.`);
 					}
 			}));
 
@@ -87,6 +92,7 @@ glob(p, {}, async (e: Error | null, files: string[]) => {
 
 		const index = yaml.stringify({ users });
 		await fs.writeFile(path.join(__dirname, 'public', 'resources', 'index.yml'), index);
+		console.log(`Successfully built all indices!`);
 	} catch (e: any) {
 		console.error((e as Error).message, e);
 		process.exit(1);
