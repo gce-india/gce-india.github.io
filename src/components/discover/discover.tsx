@@ -50,6 +50,24 @@ const Discover = () => {
 			setParams({ search: null });
 	};
 
+	const match = (pattern: string) => {
+		const pat = new RegExp(pattern, 'ig');
+		return ({ expert, type }: { expert: ExpertMini | ExternalExpertMini, type: string }) => {
+			return (
+				pat.test(expert.username)
+				|| pat.test(expert.name)
+				|| pat.test(expert.university)
+				|| pat.test(expert.location)
+				|| type === 'local' && (
+					pat.test((expert as ExpertMini).country)
+					|| (expert as ExpertMini).communities.map(c => pat.test(c)).reduce((a, b) => a || b)
+				)
+			);
+		};
+	};
+
+	const queriedUsers = query.search == null ? users : users.filter(match(query.search));
+
 	return <Container style={{
 		minHeight: 400
 	}} fluid='md mt-5 mb-5'>
@@ -127,13 +145,13 @@ const Discover = () => {
 					<List
 						itemsRenderer={(items, ref) => <div className='row' ref={ref}>{ items }</div>}
 						itemRenderer={(i, key) => {
-							const u = users[i];
+							const u = queriedUsers[i];
 
 							return u.type === 'local' ?
 							<LocalExpert expert={u.expert as ExpertMini} key={key} />
 							: <ExternalExpert expert={u.expert as ExternalExpertMini} key={key} />;
 						}}
-						length={users.length}
+						length={queriedUsers.length}
 						type='simple'
 						/>
 					: <div className='d-flex justify-content-center'><Bars color='yellow' /></div>
