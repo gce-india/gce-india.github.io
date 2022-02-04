@@ -9,7 +9,7 @@ import Fallback from './fallback';
 import Local from './local';
 import { NotFound } from '..';
 import Loading from './loading';
-import { getExpertInfo, getLocalExpertInfo } from '../../services/campus-expert';
+import { getExpertInfo } from '../../services/campus-expert';
 
 const New = ({ fallback }: { fallback?: boolean } = { fallback: false }) => {
 	const { username } = useParams();
@@ -21,21 +21,21 @@ const New = ({ fallback }: { fallback?: boolean } = { fallback: false }) => {
 		(async () => {
 			if (fallback) {
 				setType('external');
-				const data = await getExpertInfo(username!);
-				setExpert(data);
+				const data = await getExpertInfo(username!, 'external');
+				setExpert(data.expert as Expert);
 				setType('external');
 				setDone(true);
 				return;
 			}
 
-			try {
-				const localData = await getLocalExpertInfo(username!);
-				const data: LocalExpert = localData;
+			const output = await getExpertInfo(username!);
+			if (output.type === 'local') {
+				const data = output.expert as LocalExpert;
 				setExpert(data);
 				setType('local');
 				setDone(true);
-			} catch (e) {
-				const data = await getExpertInfo(username!);
+			} else {
+				const data = output.expert as Expert;
 				setExpert(data);
 				setType('external');
 				setDone(true);

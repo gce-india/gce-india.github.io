@@ -5,7 +5,7 @@ import yaml from 'yaml';
 import { Expert, Module } from '../schema/expert';
 import { Expert as LocalExpert } from '../schema/expert-local';
 
-const getExpertInfo_ = async (username: string) => {
+const getGlobalExpertInfo_ = async (username: string) => {
 	const { data: html } = await axios.get(`https://githubcampus.expert/${encodeURIComponent(username!)}`);
 	const $ = cheerio.load(html);
 	
@@ -60,5 +60,42 @@ const getLocalExpertInfo_ = async (username: string) => {
 	return expert;
 };
 
-export const getExpertInfo = getExpertInfo_;
+interface ExpertOutput {
+	expert: Expert | LocalExpert,
+	type: string
+}
+
+const getExpertInfo_ = async (username: string, type?: string): Promise<ExpertOutput> => {
+	const USER_DIR = `/users/${encodeURIComponent(username!)}`;
+	
+	switch (type) {
+		case 'local':
+			return {
+				type: 'local',
+				expert: await getLocalExpertInfo(username)
+			};
+		case 'external':
+			return {
+				type: 'global',
+				expert: await getGlobalExpertInfo(username)
+			};
+		default:
+			try {
+				const { data: info } = await axios.get(`${USER_DIR}/info.yml`);
+				yaml.parse(info);
+			} catch (e) {
+				return {
+					type: 'global',
+					expert: await getGlobalExpertInfo(username)
+				};
+			}
+			return {
+				type: 'local',
+				expert: await getLocalExpertInfo(username)
+			};
+	}
+};
+
+export const getGlobalExpertInfo = getGlobalExpertInfo_;
 export const getLocalExpertInfo = getLocalExpertInfo_;
+export const getExpertInfo = getExpertInfo_;
