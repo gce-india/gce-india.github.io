@@ -23,6 +23,7 @@ import { ExpertMini, ExternalExpertMini } from '../../schema/expert-mini';
 import { getExpertIndex } from '../../services/campus-expert';
 import LocalExpert from './local-expert';
 import ExternalExpert from './external-expert';
+import { title } from '../../constants';
 
 const Discover = () => {
 	const navigate = useNavigate();
@@ -156,6 +157,11 @@ const Discover = () => {
 						/>
 					: <div className='d-flex justify-content-center'><Bars color='yellow' /></div>
 				}
+			</Col>
+		</Row>
+		<Row className='mt-3 justify-content-center'>
+			<Col style={{ fontSize: '0.9em' }} xs='12' md='8' className='opacity-50'>
+				Are you a new Indian campus expert? <a href='https://github.com/gce-india/gce-india.github.io' target='_blank' rel="noreferrer">Create your own profile</a> on the { title } website.
 			</Col>
 		</Row>
 	</Container>;

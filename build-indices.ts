@@ -73,8 +73,8 @@ glob(p, {}, async (e: Error | null, files: string[]) => {
 
 						return user;
 					} catch (e) {
-						console.error(`Error for username: ${username}, skipping.`);
-						return null;
+						console.error(`Error for username: ${username}! Official profile not found on githubcampus.expert.`);
+						process.exit(1);
 					}
 			}));
 
@@ -82,6 +82,8 @@ glob(p, {}, async (e: Error | null, files: string[]) => {
 				if (user != null)
 					users.push(user);
 		}
+
+		users.sort((a, b) => a.username.localeCompare(b.username));
 
 		const index = yaml.stringify({ users });
 		await fs.writeFile(path.join(__dirname, 'public', 'resources', 'index.yml'), index);

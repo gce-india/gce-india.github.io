@@ -12,7 +12,7 @@
 		"clean": "rimraf ./build",
 		"lint": "eslint ./src",
 		"lint:fix": "eslint --fix ./src",
-		"index": "tsc --downlevelIteration --esModuleInterop ./build-indices.ts && node ./build-indices.js"
+		"index": "tsc --downlevelIteration --esModuleInterop ./build-indices.ts && node ./build-indices.js && rimraf ./src/**/*.js"
 	},
 	"dependencies": {
 		"@fortawesome/fontawesome-svg-core": "^1.2.36",
