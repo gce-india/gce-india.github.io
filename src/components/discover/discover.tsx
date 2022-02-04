@@ -67,14 +67,17 @@ const Discover = () => {
 		};
 	};
 
-	const queriedUsers = query.search == null ? users : users.filter(match(query.search));
+	const queriedUsers = query.search ? users.filter(match(query.search)) : users;
 
 	return <Container style={{
 		minHeight: 400
 	}} fluid='md mt-5 mb-5'>
 		<Meta
-			title='Discover'
-			description='Discover GitHub Campus Experts from India and explore events and more! Campus Experts are student leaders that strive to build and support diverse and inclusive spaces in technical communities.'
+			title={query.search ? `Discover - ${query.search}` : 'Discover'}
+			description={
+				(query.search ? `Search results for '${query.search}'. ` : '')
+				+ 'Discover GitHub Campus Experts from India and explore events and more! Campus Experts are student leaders that strive to build and support diverse and inclusive spaces in technical communities.'
+			}
 		/>
 		<Row className='d-block d-lg-none justify-content-center mt-auto mb-auto'>
 			<Col xs='12'>
