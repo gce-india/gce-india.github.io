@@ -19,10 +19,11 @@ import {
 	faMapMarkerAlt
 } from '@fortawesome/free-solid-svg-icons';
 import { Link, useLocation } from 'react-router-dom';
+import Markdown from 'react-markdown';
 
 import { Expert } from '../../schema/expert-local';
 import { Meta } from '..';
-import { title } from '../../constants';
+import Icon from './social-icon';
 
 const Profile = (expert: Expert) => {
 	const location = useLocation();
@@ -110,21 +111,35 @@ const Profile = (expert: Expert) => {
 									overflow: 'hidden',
 									whiteSpace: 'nowrap'
 								}}>
-								<FontAwesomeIcon
-									style={{
-										marginLeft: 2,
-										marginRight: 8
-									}}
-									icon={faEnvelope} />
-								<a href={`mailto:${expert.email}`}>{ expert.email }</a>
+								<a href={`mailto:${expert.email}`}>
+									<FontAwesomeIcon
+										style={{
+											marginLeft: 2,
+											marginRight: 8
+										}}
+										icon={faEnvelope} />
+										{ expert.email }
+									</a>
 							</div>
 							<div className='my-3'
 								style={{ borderTop: '1px solid lightgrey' }} />
-							<div>
-								{/* {
-									expert.
-								} */}
-							</div>
+							{
+								expert.social.map(({ name, url }, i) => <div
+									key={i}
+									title={name}
+									style={{
+										fontSize: '0.8em',
+										textOverflow: 'ellipsis',
+										overflow: 'hidden',
+										whiteSpace: 'nowrap'
+									}}
+									className='mt-1'>
+									<a href={url} target='_blank'>
+										<Icon name={name} />
+										{ name }
+									</a>
+								</div>)
+							}
 						</CardBody>
 					</Card>
 				</Row>
@@ -133,49 +148,55 @@ const Profile = (expert: Expert) => {
 				<h4>About { expert.name }</h4>
 				<div className='mt-3 mb-4'
 					style={{ borderTop: '1px solid lightgrey' }} />
-				{/* <div>
-					{ expert.about.map((para, i) => <div key={i} className='mb-3'>{ para }</div>) }
-				</div> */}
-				<h4>Skills</h4>
-				<div className='mt-3 mb-4'
-					style={{ borderTop: '1px solid lightgrey' }} />
-				<div>
-					{
-						expert.skills.map((skill, i) => <Fragment key={i}>
-							<span
-								className='code d-inline-block mb-2'
-								style={{
-									padding: 5,
-									backgroundColor: '#a8328f',
-									color: 'white',
-									borderRadius: 3,
-									width: 'max-content'
-								}}
-							>
-								{ skill }
-							</span>{' '}
-						</Fragment>)
-					}
-				</div>
-				<h4>Communities</h4>
-				<div className='mt-3 mb-4'
-					style={{ borderTop: '1px solid lightgrey' }} />
-				<div>
-					{
-						expert.communities.map((com, i) => <Fragment key={i}>
-							<Badge color='primary' className='fs-6' >
-								{ com }
-							</Badge>{' '}
-						</Fragment>)
-					}
-				</div>
-			</Col>
-		</Row>
-		<Row className='mt-3 justify-content-center'>
-			<Col style={{ fontSize: '0.9em' }} xs='12' md='8' className='opacity-50'>
-				Click here to <a target='_blank' href={`https://githubcampus.expert/${expert.username}`} rel="noreferrer">view the profile</a> on the official <a target='_blank' href='https://githubcampus.expert' rel="noreferrer">GitHub Campus Expert website</a>.
-				<br/>
-				Are you { expert.name }? <a href='https://github.com/gce-india/gce-india.github.io' target='_blank' rel="noreferrer">Create your own profile</a> on the { title } website.
+				<Markdown linkTarget='_blank'>{ expert.about }</Markdown>
+				{
+					expert.skills.length > 0 ? <>
+						<h4 className='mt-2'>Skills</h4>
+						<div className='mt-3 mb-4'
+							style={{ borderTop: '1px solid lightgrey' }} />
+						<div>
+							{
+								expert.skills.map((skill, i) => <Fragment key={i}>
+									<span
+										className='code d-inline-block mb-2'
+										style={{
+											padding: 5,
+											backgroundColor: '#a8328f',
+											color: 'white',
+											borderRadius: 3,
+											width: 'max-content'
+										}}
+									>
+										{ skill }
+									</span>{' '}
+								</Fragment>)
+							}
+						</div>
+					</> : ''
+				}
+				{
+					expert.communities.length > 0 ?
+						<>
+						<h4 className='mt-2'>Communities</h4>
+						<div className='mt-3 mb-4'
+							style={{ borderTop: '1px solid lightgrey' }} />
+						<div>
+							{
+								expert.communities.map((com, i) => <Fragment key={i}>
+									<Badge color='primary' className='fs-6 py-2' >
+										{ com }
+									</Badge>{' '}
+								</Fragment>)
+							}
+						</div>
+						</>
+					: ''
+				}
+				<Row className='mt-3 justify-content-center'>
+					<Col style={{ fontSize: '0.9em' }} xs='12' className='opacity-50'>
+						Click here to <a target='_blank' href={`https://githubcampus.expert/${expert.username}`} rel="noreferrer">view the profile</a> on the official <a target='_blank' href='https://githubcampus.expert' rel="noreferrer">GitHub Campus Expert website</a>.
+					</Col>
+				</Row>
 			</Col>
 		</Row>
 	</Container>;

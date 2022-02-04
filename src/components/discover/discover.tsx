@@ -82,7 +82,7 @@ const Discover = () => {
 				</Row>
 				<Col xs='12'>
 					<InputGroup>
-						<InputGroupText>Search for a campus expert:</InputGroupText>
+						<InputGroupText className='bg-secondary text-white'>Search for a campus expert:</InputGroupText>
 						<Input className='bg-dark text-white' value={query.search ?? ''} onChange={handleChange} type='text' />
 					</InputGroup>
 				</Col>

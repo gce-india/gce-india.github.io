@@ -2,9 +2,6 @@ name: Param Siddharth
 university: Jaypee University of Engineering and Technology
 location: Guna, Madhya Pradesh
 country: India
-pin:
-  latitude: 24.434887
-  longitude: 77.160674
 email: me@paramsid.com
 avatar: https://www.paramsid.com/zarurat/me.jpg
 skills: [JavaScript, TypeScript, Python, C, C++, Docker, SQL, React, Qt, Bootstrap, Go, Cloud, WASM]
@@ -28,5 +25,5 @@ social:
     url:  https://www.facebook.com/paramsiddharthofficial
   - name: Spotify
     url:  https://open.spotify.com/artist/1bUv1VdCaRqqHIgsSfUqkU
-  - name: Patreon
-    url:  https://www.patreon.com/paramsiddharth?fan_landing=true
+  - name: Stack Overflow
+    url:  https://stackoverflow.com/users/12547142/param-siddharth

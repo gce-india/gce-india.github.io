@@ -48,6 +48,9 @@ const getLocalExpertInfo_ = async (username: string) => {
 	const data = yaml.parse(info);
 	
 	const expert: LocalExpert = {
+		social: [],
+		skills: [],
+		communities: [],
 		username,
 		...data,
 		about
