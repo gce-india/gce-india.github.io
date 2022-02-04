@@ -1,0 +1,119 @@
+users:
+  - name: Abhinav Sharma
+    username: abhi-bhatra
+    picture: https://github.com/abhi-bhatra.png
+    university: JECRC
+    location: Jaipur
+    local: false
+  - name: Akshaya Kulasekaran
+    username: Akshu-on-github
+    picture: https://avatars.githubusercontent.com/u/61582763?v=4
+    university: SRM Institute of Science and Technology, Ramapuram
+    location: Chennai
+    local: false
+  - name: Amritaya Ray
+    username: amritayaray02
+    picture: https://avatars.githubusercontent.com/u/77060538?v=4
+    university: Indira Gandhi Delhi Technical University for Women
+    location: New Delhi
+    local: false
+  - name: Kartikey Rawat
+    username: carrycooldude
+    picture: https://avatars.githubusercontent.com/u/41143496?s=400&u=6fa5ebe1c18a4ad0b470a8830f4c8e80651f0472&v=4
+    university: Bhilai Institute of Technology,Durg
+    location: Durg
+    local: false
+  - name: Uday Yadav
+    username: dev117uday
+    picture: https://github.com/dev117uday.png
+    university: Dr. Akhilesh Das Gupta Institute of Technology & Management
+    location: New Delhi
+    local: false
+  - name: Vaishnavi Dwivedi
+    username: dwvicy
+    picture: https://avatars.githubusercontent.com/u/29779226?s=400&u=2279ef21092c34d54f58f6963f4e073bebbfed4a&v=4
+    university: Ramrao Adik Institute of Technology
+    location: Mumbai
+    local: false
+  - name: Harshita Jain
+    username: harshitajain165
+    picture: https://avatars.githubusercontent.com/u/77115160?s=400&u=e1be447fed95e626ac3f6a4fea59b9853457aaa9&v=4
+    university: National Institute of Technology Hamirpur
+    location: Hamirpur
+    local: false
+  - name: Induja Shankar
+    username: induviduality
+    picture: https://avatars3.githubusercontent.com/u/53386868?v=4
+    university: Chennai Institute of Technology
+    location: Chennai
+    local: false
+  - name: Ishika Kesarwani
+    username: ishikkkkaaaa
+    picture: https://avatars.githubusercontent.com/u/64490215?v=4
+    university: University of Petroleum and Energy Studies
+    location: Dehradun
+    local: false
+  - name: Kaiwalya Koparkar
+    username: kaiwalyakoparkar
+    picture: https://avatars.githubusercontent.com/u/53310847?v=4
+    university: Sir Dr. M. S. Gosavi Polytechnic Institute
+    location: Nashik, India
+    local: false
+  - name: Khushi Garg
+    username: khushi200701
+    picture: https://avatars.githubusercontent.com/u/58480229?v=4
+    university: Indian Institute of Information Technology, Guwahati
+    location: Guwahati
+    local: false
+  - username: paramsiddharth
+    name: Param Siddharth
+    university: Jaypee University of Engineering and Technology
+    location: Guna, Madhya Pradesh
+    country: India
+    avatar: https://www.paramsid.com/zarurat/me.jpg
+    communities:
+      - PyData Guna
+      - LOSDC
+    local: true
+  - name: Sakshi Choudhary
+    username: sakshi-choudhary
+    picture: https://avatars.githubusercontent.com/u/66865329?v=4
+    university: SRM Institute of Science and Technology, Kattankulathur
+    location: Chennai
+    local: false
+  - name: Shrankhla Srivastava
+    username: shrankhla20
+    picture: https://avatars.githubusercontent.com/u/59532277?v=4
+    university: Indira Gandhi Delhi Technical University for Women
+    location: Delhi
+    local: false
+  - name: Siddharth Dayalwal
+    username: siddharthdayalwal
+    picture: https://avatars.githubusercontent.com/u/41017419?v=4
+    university: Babaria Institue of Technology
+    location: Vadodara
+    local: false
+  - name: Ankit Singh
+    username: singhankit62000
+    picture: https://avatars.githubusercontent.com/singhankit62000
+    university: KLE Technological University
+    location: Hubli
+    local: false
+  - name: Sudip Mondal
+    username: sudip-mondal-2002
+    picture: https://avatars.githubusercontent.com/sudip-mondal-2002
+    university: Indian Institute of Technology, Madras
+    location: Chennai
+    local: false
+  - name: Sunit Roy
+    username: SunitRoy2703
+    picture: https://avatars.githubusercontent.com/u/67560900?v=4
+    university: Engineering Institute For Junior Executives
+    location: Kolkata
+    local: false
+  - name: Yashica Patodia
+    username: yashica-patodia
+    picture: https://avatars.githubusercontent.com/u/58307462?v=4
+    university: Indian Institute of Technology Kharagpur
+    location: Calcutta
+    local: false
