@@ -1,11 +1,13 @@
-name: Continuous Deployment
+name: Continuous Integration
 
 on:
   push:
+    tags: [v*]
+  pull_request:
     branches: [main]
 
 jobs:
-  deploy:
+  build:
 
     runs-on: ubuntu-latest
 
@@ -23,9 +25,3 @@ jobs:
 
     - name: Build
       run: npm run build
-
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-        publish_dir: ./build
