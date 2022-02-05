@@ -41,12 +41,16 @@ users:
     university: National Institute of Technology Hamirpur
     location: Hamirpur
     local: false
-  - name: Induja Shankar
-    username: induviduality
-    picture: https://avatars3.githubusercontent.com/u/53386868?v=4
+  - username: induviduality
+    name: Induja Shankar
     university: Chennai Institute of Technology
-    location: Chennai
-    local: false
+    location: Chennai, Tamil Nadu
+    country: India
+    avatar: https://avatars3.githubusercontent.com/u/53386868?v=4
+    communities:
+      - EliCIT
+      - GDSC-CIT
+    local: true
   - name: Ishika Kesarwani
     username: ishikkkkaaaa
     picture: https://avatars.githubusercontent.com/u/64490215?v=4
