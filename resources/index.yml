@@ -23,6 +23,16 @@ users:
     university: Bhilai Institute of Technology,Durg
     location: Durg
     local: false
+  - username: CIPHERTron
+    name: Pritish Samal
+    university: National Institute of Technology, Rourkela
+    location: Rourkela, Odisha
+    country: India
+    avatar: https://avatars.githubusercontent.com/u/56754747?v=4
+    communities:
+      - OpenCode
+      - GDSC NITR
+    local: true
   - name: Uday Yadav
     username: dev117uday
     picture: https://github.com/dev117uday.png
