@@ -1,0 +1,3 @@
+Pritish is a junior year undergrad, pursuing B.Tech in **Ceramic Engineering** at the **National Institute of Technology, Rourkela**. He has a keen interest in building highly scalable full-stack web applications, deploying them, automating the workflows, and monitoring applications. He is also a huge open-source enthusiast and has contributed to various organizations including **Kubernetes**, **Kyverno**, **Open Bioinformatics Foundation**. He also loves participating in hackathons and building projects which would help tackle a real-world problem. He was also one of the organizing team member of **HackNITR Hackathon**
+
+To know more about me, visit [pritishsamal.tech](https://pritishsamal.tech) ✨
