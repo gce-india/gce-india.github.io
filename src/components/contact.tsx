@@ -55,7 +55,7 @@ const Contact = () => {
 				Applications open twice a year, so hurry up!
 			</Col>
 		</Row>
-	</Container>
+	</Container>;
 };
 
 export default Contact;

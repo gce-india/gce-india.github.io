@@ -7,7 +7,7 @@ interface ExpertMini_ {
     avatar: string,
     communities: string[],
 	local?: boolean
-};
+}
 
 interface ExternalExpertMini_ {
 	name: string,
@@ -16,7 +16,7 @@ interface ExternalExpertMini_ {
 	university: string,
 	location: string,
 	local?: boolean
-};
+}
 
 export type ExpertMini = ExpertMini_;
 export type ExternalExpertMini = ExternalExpertMini_;

@@ -96,6 +96,6 @@ const Expert = ({ expert }: {
 			</CardBody>
 		</Card>
 	</Col>;
-}
+};
 
 export default Expert;

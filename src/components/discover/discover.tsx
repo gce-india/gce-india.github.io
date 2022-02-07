@@ -146,19 +146,19 @@ const Discover = () => {
 			<Col xs='12' className='order-3 mt-4'>
 				{
 					users.length > 0 ?
-					<List
-						itemsRenderer={(items, ref) => <div className='row' ref={ref}>{ items }</div>}
-						itemRenderer={(i, key) => {
-							const u = queriedUsers[i];
+						<List
+							itemsRenderer={(items, ref) => <div className='row' ref={ref}>{ items }</div>}
+							itemRenderer={(i, key) => {
+								const u = queriedUsers[i];
 
-							return u.type === 'local' ?
-							<LocalExpert expert={u.expert as ExpertMini} key={key} />
-							: <ExternalExpert expert={u.expert as ExternalExpertMini} key={key} />;
-						}}
-						length={queriedUsers.length}
-						type='simple'
+								return u.type === 'local' ?
+									<LocalExpert expert={u.expert as ExpertMini} key={key} />
+									: <ExternalExpert expert={u.expert as ExternalExpertMini} key={key} />;
+							}}
+							length={queriedUsers.length}
+							type='simple'
 						/>
-					: <div className='d-flex justify-content-center'><Bars color='yellow' /></div>
+						: <div className='d-flex justify-content-center'><Bars color='yellow' /></div>
 				}
 			</Col>
 		</Row>

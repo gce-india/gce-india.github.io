@@ -121,8 +121,8 @@ const Profile = (expert: Expert) => {
 											marginRight: 8
 										}}
 										icon={faEnvelope} />
-										{ expert.email }
-									</a>
+									{ expert.email }
+								</a>
 							</div>
 							<div className='my-3'
 								style={{ borderTop: '1px solid lightgrey' }} />
@@ -137,7 +137,7 @@ const Profile = (expert: Expert) => {
 										whiteSpace: 'nowrap'
 									}}
 									className='mt-1'>
-									<a href={url} target='_blank'>
+									<a href={url} target='_blank' rel="noreferrer">
 										<Icon name={name} />
 										{ name }
 									</a>
@@ -183,20 +183,20 @@ const Profile = (expert: Expert) => {
 				{
 					expert.communities.length > 0 ?
 						<>
-						<h4 className='mt-2'>Communities</h4>
-						<div className='mt-3 mb-4'
-							style={{ borderTop: '1px solid lightgrey' }} />
-						<div>
-							{
-								expert.communities.map((com, i) => <Fragment key={i}>
-									<Badge color='primary' className='fs-6 py-2' >
-										{ com }
-									</Badge>{' '}
-								</Fragment>)
-							}
-						</div>
+							<h4 className='mt-2'>Communities</h4>
+							<div className='mt-3 mb-4'
+								style={{ borderTop: '1px solid lightgrey' }} />
+							<div>
+								{
+									expert.communities.map((com, i) => <Fragment key={i}>
+										<Badge color='primary' className='fs-6 py-2' >
+											{ com }
+										</Badge>{' '}
+									</Fragment>)
+								}
+							</div>
 						</>
-					: ''
+						: ''
 				}
 				<Row className='mt-3 justify-content-center'>
 					<Col style={{ fontSize: '0.9em' }} xs='12' className='opacity-50'>

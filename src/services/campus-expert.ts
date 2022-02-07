@@ -70,30 +70,30 @@ const getExpertInfo_ = async (username: string, type?: string): Promise<ExpertOu
 	const USER_DIR = `/users/${encodeURIComponent(username!)}`;
 	
 	switch (type) {
-		case 'local':
-			return {
-				type: 'local',
-				expert: await getLocalExpertInfo(username)
-			};
-		case 'external':
+	case 'local':
+		return {
+			type: 'local',
+			expert: await getLocalExpertInfo(username)
+		};
+	case 'external':
+		return {
+			type: 'global',
+			expert: await getGlobalExpertInfo(username)
+		};
+	default:
+		try {
+			const { data: info } = await axios.get(`${USER_DIR}/info.yml`);
+			yaml.parse(info);
+		} catch (e) {
 			return {
 				type: 'global',
 				expert: await getGlobalExpertInfo(username)
 			};
-		default:
-			try {
-				const { data: info } = await axios.get(`${USER_DIR}/info.yml`);
-				yaml.parse(info);
-			} catch (e) {
-				return {
-					type: 'global',
-					expert: await getGlobalExpertInfo(username)
-				};
-			}
-			return {
-				type: 'local',
-				expert: await getLocalExpertInfo(username)
-			};
+		}
+		return {
+			type: 'local',
+			expert: await getLocalExpertInfo(username)
+		};
 	}
 };
 
