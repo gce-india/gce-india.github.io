@@ -4,7 +4,6 @@ import glob from 'glob';
 import yaml from 'yaml';
 
 import { Expert as LocalExpert } from './src/schema/expert-local';
-import { Expert as ExternalExpert } from './src/schema/expert';
 import { ExpertMini, ExternalExpertMini } from './src/schema/expert-mini';
 import { getGlobalExpertInfo } from './src/services/campus-expert';
 
@@ -12,7 +11,9 @@ fs.ensureDirSync(path.join(__dirname, 'public', 'local'));
 fs.ensureDirSync(path.join(__dirname, 'public', 'users'));
 fs.ensureDirSync(path.join(__dirname, 'public', 'resources'));
 
+const SITE_URL = process.env.SITE_URL ?? `https://gce-india.github.io/`;
 const p = path.join(__dirname, 'public', 'users', '*') + path.sep;
+
 glob(p, {}, async (e: Error | null, files: string[]) => {
 	if (e != null)
 		throw e;
@@ -93,6 +94,18 @@ glob(p, {}, async (e: Error | null, files: string[]) => {
 		const index = yaml.stringify({ users });
 		await fs.writeFile(path.join(__dirname, 'public', 'resources', 'index.yml'), index);
 		console.log(`Successfully built all indices!`);
+
+		const routes = [
+			'',
+			'discover',
+			'about',
+			'contact',
+			...users.map(u => u.username)
+		];
+		const sitemap = path.join(__dirname, 'public', 'sitemap.txt');
+		await fs.writeFile(sitemap, '', { flag: 'w+', encoding: 'utf-8' });
+		for (const route of routes)
+			await fs.writeFile(sitemap, SITE_URL + (route === '' ? '' : ('?/' + route)) + '\n', { flag: 'a+', encoding: 'utf-8' });
 	} catch (e: any) {
 		console.error((e as Error).message, e);
 		process.exit(1);

@@ -17,8 +17,9 @@ dist-ssr/
 tmp/
 temp/
 
-# Generated indices
+# Generated indices and data
 public/resources/
+public/sitemap.txt
 
 # JavaScript
 *.js
