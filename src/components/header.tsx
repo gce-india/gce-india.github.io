@@ -5,7 +5,7 @@ import {
 	Nav,
 	NavItem
 } from 'reactstrap';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 import { title } from '../constants';
 
@@ -17,7 +17,7 @@ const Header = () => {
 			className='mb-2'
 			dark
 		>
-			<NavbarBrand href='/'>
+			<Link className='navbar-brand' to='/'>
 				<img alt={title} src='/assets/logo.png' 
 					style={{
 						marginRight: '1ex'
@@ -25,7 +25,7 @@ const Header = () => {
 					width={30}
 				/>
 				{ title }
-			</NavbarBrand>
+			</Link>
 			<button className='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbar'>
 				<span className='navbar-toggler-icon'></span>
 			</button>
