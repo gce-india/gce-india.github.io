@@ -21,6 +21,8 @@ import {
 import { Link, useLocation } from 'react-router-dom';
 import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import rehypeSanitize from 'rehype-sanitize';
+import rehypeRaw from 'rehype-raw';
 
 import { Expert } from '../../schema/expert-local';
 import { Meta } from '..';
@@ -149,7 +151,10 @@ const Profile = (expert: Expert) => {
 				<h4>About { expert.name }</h4>
 				<div className='mt-3 mb-4'
 					style={{ borderTop: '1px solid lightgrey' }} />
-				<Markdown remarkPlugins={[remarkGfm]} linkTarget='_blank'>{ expert.about }</Markdown>
+				<Markdown
+					remarkPlugins={[remarkGfm]}
+					rehypePlugins={[rehypeRaw, rehypeSanitize]}
+					linkTarget='_blank'>{ expert.about }</Markdown>
 				{
 					expert.skills.length > 0 ? <>
 						<h4 className='mt-2'>Skills</h4>

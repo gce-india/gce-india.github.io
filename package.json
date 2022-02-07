@@ -32,6 +32,8 @@
 		"react-markdown": "^8.0.0",
 		"react-router-dom": "^6.2.1",
 		"reactstrap": "^9.0.1",
+		"rehype-raw": "^6.1.1",
+		"rehype-sanitize": "^5.0.1",
 		"remark-gfm": "^3.0.1",
 		"styled-components": "^5.3.3",
 		"use-query-string": "^2.4.1",
