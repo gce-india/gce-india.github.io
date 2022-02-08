@@ -6,6 +6,7 @@ import day from 'dayjs';
 import utc from 'dayjs/plugin/utc';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
 import metadataParser from 'markdown-yaml-metadata-parser';
+import markdownToTxt from 'markdown-to-txt';
 
 import { Expert as LocalExpert } from './src/schema/expert-local';
 import { ExpertMini, ExternalExpertMini } from './src/schema/expert-mini';
@@ -29,7 +30,10 @@ const state: {
 	blogs?: Blog[]
 } = {};
 
-const summarize = (text: string, maxLength: number = 50) => text.length > maxLength ? text.slice(0, maxLength) + '...' : text;
+const summarize = (markdown: string, maxLength: number = 50) => {
+	const text = markdownToTxt(markdown);
+	return text.length > maxLength ? text.slice(0, maxLength) + '...' : text;
+};
 
 const indexUsers = () => new Promise(async done => {
 	const p = path.join(__dirname, 'public', 'users', '*') + path.sep;
@@ -96,7 +100,7 @@ const indexUsers = () => new Promise(async done => {
 								university: data.university,
 								location: data.location,
 								local: false
-						};
+							};
 	
 							return user;
 						} catch (e) {
@@ -172,9 +176,6 @@ const indexBlogs = () => new Promise(async done => {
 const writeIndices = async () => {
 	const { users } = state;
 
-	const index = yaml.stringify({ users });
-	await fs.writeFile(path.join(__dirname, 'public', 'resources', 'index.yml'), index);
-
 	const routes = [
 		'',
 		'discover',
@@ -188,7 +189,8 @@ const writeIndices = async () => {
 		await fs.writeFile(sitemap, SITE_URL + (route === '' ? '' : ('?/' + route)) + '\n', { flag: 'a+', encoding: 'utf-8' });
 	console.log('Sitemap generated.');
 
-	for (const u of state.users.filter(u => u.blogs)) {
+	for (const u of users.filter(u => u.blogs)) {
+		delete u.blogs;
 		const userBlogs = state.blogs.filter(b => b.user === u.username);
 		
 		const pageCount = Math.floor(userBlogs.length / PAGE_SIZE);
@@ -229,6 +231,10 @@ const writeIndices = async () => {
 		}
 		console.log(`${pageCount + (leftItemCount > 0 ? 1 : 0)} blog page(s) generated for '${u.username}'`);
 	}
+
+	const index = yaml.stringify({ users });
+	await fs.writeFile(path.join(__dirname, 'public', 'resources', 'index.yml'), index);
+	console.log(`${users.length} campus experts indexed.`);
 	
 	{
 		const blogs = state.blogs;
@@ -274,7 +280,7 @@ const writeIndices = async () => {
 	}
 };
 
-if (require.main === module) {
+if (require.main === module)
 	(async () => {
 		await indexUsers();
 		await indexBlogs();
@@ -282,4 +288,3 @@ if (require.main === module) {
 		console.log(`Successfully built all indices!`);
 		process.exit(0);
 	})();
-}
