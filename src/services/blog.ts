@@ -14,22 +14,26 @@ day.extend(localizedFormat);
 day().utcOffset(UTC_OFFSET);
 
 const getBlogs_ = async (page: number = 0, username?: string) => {
-	let route = `/resources/blogs/${page}.yml`;
-	if (username)
-		route = `/users/${username}/blogs/index/${page}.yml`;
+	try {
+		let route = `/resources/blogs/${page}.yml`;
+		if (username)
+			route = `/users/${username}/blogs/index/${page}.yml`;
 
-	const resp = await axios.get(route);
-	const data = yaml.parse(resp.data);
-	const list: Blog[] = data.blogs
-		.map((blog: any) => ({
-			id: blog.id,
-			user: username ?? blog.author,
-			title: blog.title,
-			date: day(blog.date, DATE_FORMAT).format(PUBLIC_DATE_FORMAT),
-			data: blog.summary
-		}));
+		const resp = await axios.get(route);
+		const data = yaml.parse(resp.data);
+		const list: Blog[] = data.blogs
+			.map((blog: any) => ({
+				id: blog.id,
+				user: username ?? blog.author,
+				title: blog.title,
+				date: day(blog.date, DATE_FORMAT).format(PUBLIC_DATE_FORMAT),
+				data: blog.summary
+			}));
 
-	return [list, data.lastPage];
+		return [list, data.lastPage];
+	} catch (e) {
+		return [[], true];
+	}
 };
 
 export const getBlogs = getBlogs_;

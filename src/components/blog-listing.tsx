@@ -14,7 +14,7 @@ import './blogs.css';
 const Listing = ({ username }: {
 	username?: string
 }) => {
-	const [list, setList] = useState<Blog[]>([]);
+	const [list, setList] = useState<Blog[] | null>([]);
 	const [page, setPage] = useState<number>(0);
 	const [last, setLast] = useState<boolean>(false);
 
@@ -28,13 +28,13 @@ const Listing = ({ username }: {
 	const prevPage = async () => {
 		if (page === 0)
 			return;
-		setList([]);
+		setList(null);
 		await updatePage(page - 1);
 	};
 	const nextPage = async () => {
 		if (last)
 			return;
-		setList([]);
+		setList(null);
 		await updatePage(page + 1);
 	};
 
@@ -42,10 +42,17 @@ const Listing = ({ username }: {
 		updatePage(0);
 	}, []);
 
-	if (list == null || list.length < 1)
+	if (list == null)
 		return <Loading>
 			Loading posts...
 		</Loading>;
+
+	if (list.length < 1)
+		return <Row className='justify-content-center'>
+			<Col className='d-flex justify-content-center'>
+				No posts to show.
+			</Col>
+		</Row>;
 	
 	return <>
 		<Row style={{
