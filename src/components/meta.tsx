@@ -5,17 +5,23 @@ import { title as mainTitle } from '../constants';
 interface MetaData {
 	title?: string,
 	description?: string,
-	keywords?: string[]
+	keywords?: string[],
+	removeRoot?: boolean
 }
 
 const Meta = ({
 	title,
 	description,
-	keywords
+	keywords,
+	removeRoot
 }: MetaData) => <Helmet>
 	{
 		title != null ?
-			<title>{ `${mainTitle} - ${title}` }</title>
+			(
+				removeRoot ?
+				<title>{ title }</title>
+				: <title>{ `${mainTitle} - ${title}` }</title>
+			)
 			: <title>{ mainTitle }</title>
 	}
 	{

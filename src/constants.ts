@@ -39,10 +39,10 @@ const AUDIO_TIME_SLICE = 200;
 
 const FORM_LINK = 'https://docs.google.com/forms/d/e/1FAIpQLSdX6AocQg8d_g8Snq6vWxdOQN7p_Y6nCaeCWMKDfdsIZm8Pww/viewform?usp=sf_link';
 
-
-const SITE_URL_    = process.env.SITE_URL ?? `https://gce-india.github.io/`;
+const SITE_URL_    = `https://gce-india.github.io/`;
 const PAGE_SIZE_   = 10;
 const DATE_FORMAT_ = 'YYYY-MM-DD hh:mm:ss A';
+const PUBLIC_DATE_FORMAT_ = 'lll';
 const UTC_OFFSET_  = 5 * 60 + 30;
 
 export const title = TITLE;
@@ -54,4 +54,5 @@ export const formLink = FORM_LINK;
 export const SITE_URL = SITE_URL_;
 export const PAGE_SIZE = PAGE_SIZE_;
 export const DATE_FORMAT = DATE_FORMAT_;
+export const PUBLIC_DATE_FORMAT = PUBLIC_DATE_FORMAT_;
 export const UTC_OFFSET = UTC_OFFSET_;

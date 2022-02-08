@@ -8,7 +8,7 @@ import { Expert as LocalExpert } from '../../schema/expert-local';
 import Fallback from './fallback';
 import Local from './local';
 import { NotFound } from '..';
-import Loading from './loading';
+import Loading from '../loading';
 import { getExpertInfo } from '../../services/campus-expert';
 
 const New = ({ fallback }: { fallback?: boolean } = { fallback: false }) => {

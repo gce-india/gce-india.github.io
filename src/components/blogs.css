@@ -1,0 +1,21 @@
+.blog-post-title {
+	font-weight: normal;
+	color: rgb(207, 207, 235);
+}
+
+.no-underline {
+	text-decoration: none;
+}
+
+.blog-post-title.on-hover:hover,
+.blog-post-title.on-hover:focus {
+	filter: brightness(180%);
+}
+
+.about-blog-post {
+	opacity: 0.6;
+}
+
+.post-summary {
+	font-size: 0.9em;
+}

@@ -27,7 +27,7 @@ const state: {
 	blogs?: Blog[]
 } = {};
 
-const summarize = (markdown: string, maxLength: number = 50) => {
+const summarize = (markdown: string, maxLength: number = 150) => {
 	const text = markdownToTxt(markdown);
 	return text.length > maxLength ? text.slice(0, maxLength) + '...' : text;
 };

@@ -7,7 +7,6 @@ import {
 import { Grid } from 'react-loader-spinner';
 
 const Loading = ({ children }: { children?: string | ReactElement | (string | ReactElement)[] }) => <Container fluid='md mt-5 mb-5'>
-	
 	<Row style={{
 		minHeight: 400
 	}} className='align-items-center mt-auto mb-auto'>

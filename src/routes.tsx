@@ -9,11 +9,13 @@ import {
 	Contact,
 	Discover,
 	New,
-	NotFound
+	NotFound,
+	Blogs
 } from './components';
 
 const CustomRoutes = () => <Routes>
 	<Route path='/' element={<Main />} />
+	<Route path='/blog' element={<Blogs />} />
 	<Route path='/discover' element={<Discover />} />
 	<Route path='/about' element={<About />} />
 	<Route path='/contact' element={<Contact />} />

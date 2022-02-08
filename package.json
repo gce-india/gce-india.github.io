@@ -9,10 +9,11 @@
 		"build": "npm-run-all index build:app",
 		"build:app": "tsc && vite build",
 		"preview": "zx ./preview.mjs",
-		"clean": "rimraf ./build && rimraf ./src/**/*.js",
+		"clean": "rimraf ./build && npm run clean:js",
+		"clean:js": "rimraf ./src/**/*.js && rimraf ./src/*.js",
 		"lint": "eslint ./src",
 		"lint:fix": "eslint --fix ./src",
-		"index": "tsc --downlevelIteration --esModuleInterop ./build-indices.ts && node ./build-indices.js && rimraf ./src/**/*.js"
+		"index": "tsc --downlevelIteration --esModuleInterop ./build-indices.ts && node ./build-indices.js && npm run clean:js"
 	},
 	"dependencies": {
 		"@fortawesome/fontawesome-svg-core": "^1.2.36",
