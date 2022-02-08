@@ -20,6 +20,7 @@ temp/
 # Generated indices and data
 public/resources/
 public/sitemap.txt
+public/users/**/blogs/index.yml
 
 # JavaScript
 *.js
