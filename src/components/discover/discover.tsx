@@ -52,19 +52,23 @@ const Discover = () => {
 	};
 
 	const match = (pattern: string) => {
-		const pat = new RegExp(pattern, 'ig');
-		return ({ expert, type }: { expert: ExpertMini | ExternalExpertMini, type: string }) => {
-			return (
-				pat.test(expert.username)
-				|| pat.test(expert.name)
-				|| pat.test(expert.university)
-				|| pat.test(expert.location)
-				|| type === 'local' && (
-					pat.test((expert as ExpertMini).country)
-					|| (expert as ExpertMini).communities.map(c => pat.test(c)).reduce((a, b) => a || b)
-				)
-			);
-		};
+		try {
+			const pat = new RegExp(pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'ig');
+			return ({ expert, type }: { expert: ExpertMini | ExternalExpertMini, type: string }) => {
+				return (
+					pat.test(expert.username)
+					|| pat.test(expert.name)
+					|| pat.test(expert.university)
+					|| pat.test(expert.location)
+					|| type === 'local' && (
+						pat.test((expert as ExpertMini).country)
+						|| (expert as ExpertMini).communities.map(c => pat.test(c)).reduce((a, b) => a || b)
+					)
+				);
+			};
+		} catch (e) {
+			return ({ expert, type }: { expert: ExpertMini | ExternalExpertMini, type: string }) => true;
+		}
 	};
 
 	const queriedUsers = query.search ? users.filter(match(query.search)) : users;
