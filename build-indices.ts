@@ -186,7 +186,7 @@ const writeIndices = async () => {
 	await fs.writeFile(sitemap, '', { flag: 'w+', encoding: 'utf-8' });
 	for (const route of routes)
 		await fs.writeFile(sitemap, SITE_URL + (route === '' ? '' : ('?/' + route)) + '\n', { flag: 'a+', encoding: 'utf-8' });
-	console.log('Sitemap generated!');
+	console.log('Sitemap generated.');
 
 	for (const u of state.users.filter(u => u.blogs)) {
 		const userBlogs = state.blogs.filter(b => b.user === u.username);
@@ -227,7 +227,50 @@ const writeIndices = async () => {
 			const ymlData = yaml.stringify(ymlDataObject);
 			await fs.writeFile(path.join(__dirname, 'public', 'users', u.username, 'blogs', 'index', `${pageCount}.yml`), ymlData);
 		}
-		console.log(`${pageCount + (leftItemCount > 0 ? 1 : 0)} blog pages generated for '${u.username}'!`);
+		console.log(`${pageCount + (leftItemCount > 0 ? 1 : 0)} blog page(s) generated for '${u.username}'`);
+	}
+	
+	{
+		const blogs = state.blogs;
+		const pageCount = Math.floor(blogs.length / PAGE_SIZE);
+		const leftItemCount = blogs.length % PAGE_SIZE;
+
+		await fs.ensureDir(path.join(__dirname, 'public', 'resources', 'blogs'));
+		await fs.emptyDir(path.join(__dirname, 'public', 'resources', 'blogs'));
+
+		for (let i = 0; i < pageCount; i++) {
+			const init = i * PAGE_SIZE;
+			const final = (i + 1) * PAGE_SIZE;
+
+			let pageBlogs: any[] = blogs.slice(init, final);
+			pageBlogs = pageBlogs.map(b => ({
+				id: b.id,
+				title: b.title,
+				author: b.user,
+				date: day(b.date).format(DATE_FORMAT),
+				summary: summarize(b.data)
+			}));
+
+			const ymlDataObject = { blogs: pageBlogs, lastPage: i === pageCount - 1 && leftItemCount === 0 };
+			const ymlData = yaml.stringify(ymlDataObject);
+			await fs.writeFile(path.join(__dirname, 'public', 'resources', 'blogs', `${i}.yml`), ymlData);
+		}
+
+		if (leftItemCount > 0) {
+			let pageBlogs: any[] = blogs.slice(-leftItemCount);
+			pageBlogs = pageBlogs.map(b => ({
+				id: b.id,
+				title: b.title,
+				author: b.user,
+				date: day(b.date).format(DATE_FORMAT),
+				summary: summarize(b.data)
+			}));
+
+			const ymlDataObject = { blogs: pageBlogs, lastPage: true };
+			const ymlData = yaml.stringify(ymlDataObject);
+			await fs.writeFile(path.join(__dirname, 'public', 'resources', 'blogs', `${pageCount}.yml`), ymlData);
+		}
+		console.log(`${pageCount + (leftItemCount > 0 ? 1 : 0)} global blog page(s) generated.`);
 	}
 };
 
