@@ -58,7 +58,7 @@ const Listing = ({ username }: {
 		<Row style={{
 			minHeight: 400
 		}}  className='mt-3 justify-content-center'>
-			{list.map((post, i) => <Col key={i} xs='12' md='8'>
+			{list.map((post, i) => <Col key={i} xs='12' lg='10'>
 				<Link className='blog-post-title no-underline' to={`/blog/${post.user}/${post.id}`}>
 					<h5 className='blog-post-title on-hover'>{ post.title }</h5>
 				</Link>
@@ -70,7 +70,7 @@ const Listing = ({ username }: {
 			</Col>)}
 		</Row>
 		<Row className='mt-3 justify-content-center'>
-			<Col xs='12' md='8' lg='6'>
+			<Col xs='12' lg='10'>
 				<Row>
 					<Col>
 						<Button

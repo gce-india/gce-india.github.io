@@ -21,14 +21,14 @@ const Blogs = () => {
 			description='The GitHub Campus Experts India Blog. Campus Experts are student leaders that strive to build and support diverse and inclusive spaces in technical communities.'
 		/>
 		<Row className='justify-content-center mt-auto mb-auto'>
-			<Col xs='12' md='8'>
+			<Col xs='12' md='12' lg='10'>
 				<h1 className='mb-3'>Blog</h1>
 				<h4 className='mb-3'>Recent posts</h4>
 			</Col>
 		</Row>
 		<Listing username={username} />
 		<Row className='mt-3 justify-content-center'>
-			<Col xs='12' md='8' className='opacity-50'>
+			<Col xs='12' md='12' lg='10' className='opacity-50'>
 			Are you also an Indian campus expert? <a href='https://github.com/gce-india/gce-india.github.io' target='_blank' rel="noreferrer">Start your own blog</a> on the { title } website.
 			</Col>
 		</Row>
