@@ -12,6 +12,7 @@ import { Expert as LocalExpert } from './src/schema/expert-local';
 import { ExpertMini, ExternalExpertMini } from './src/schema/expert-mini';
 import { Blog } from './src/schema/blog';
 import { getGlobalExpertInfo } from './src/services/campus-expert';
+import { SITE_URL, PAGE_SIZE, DATE_FORMAT, UTC_OFFSET } from './src/constants';
 
 fs.ensureDirSync(path.join(__dirname, 'public', 'local'));
 fs.ensureDirSync(path.join(__dirname, 'public', 'users'));
@@ -19,11 +20,7 @@ fs.ensureDirSync(path.join(__dirname, 'public', 'resources'));
 fs.emptyDirSync(path.join(__dirname, 'public', 'resources'));
 day.extend(utc);
 day.extend(customParseFormat);
-day().utcOffset(5 * 60 + 30);
-
-const SITE_URL = process.env.SITE_URL ?? `https://gce-india.github.io/`;
-const PAGE_SIZE = 10;
-const DATE_FORMAT = 'YYYY-MM-DD hh:mm:ss A';
+day().utcOffset(UTC_OFFSET);
 
 const state: {
 	users?: (ExpertMini | ExternalExpertMini)[],
