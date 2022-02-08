@@ -6,7 +6,8 @@ interface ExpertMini_ {
     country: string,
     avatar: string,
     communities: string[],
-	local?: boolean
+	local?: boolean,
+	blogs?: boolean
 }
 
 interface ExternalExpertMini_ {
@@ -15,7 +16,8 @@ interface ExternalExpertMini_ {
 	picture: string,
 	university: string,
 	location: string,
-	local?: boolean
+	local?: boolean,
+	blogs?: boolean
 }
 
 export type ExpertMini = ExpertMini_;

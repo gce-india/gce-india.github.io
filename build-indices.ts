@@ -9,20 +9,29 @@ import metadataParser from 'markdown-yaml-metadata-parser';
 
 import { Expert as LocalExpert } from './src/schema/expert-local';
 import { ExpertMini, ExternalExpertMini } from './src/schema/expert-mini';
+import { Blog } from './src/schema/blog';
 import { getGlobalExpertInfo } from './src/services/campus-expert';
 
 fs.ensureDirSync(path.join(__dirname, 'public', 'local'));
 fs.ensureDirSync(path.join(__dirname, 'public', 'users'));
 fs.ensureDirSync(path.join(__dirname, 'public', 'resources'));
+fs.emptyDirSync(path.join(__dirname, 'public', 'resources'));
 day.extend(utc);
 day.extend(customParseFormat);
 day().utcOffset(5 * 60 + 30);
 
 const SITE_URL = process.env.SITE_URL ?? `https://gce-india.github.io/`;
+const PAGE_SIZE = 10;
+const DATE_FORMAT = 'YYYY-MM-DD hh:mm:ss A';
 
-const state: { [k: string]: any } = {};
+const state: {
+	users?: (ExpertMini | ExternalExpertMini)[],
+	blogs?: Blog[]
+} = {};
 
-const indexUsers = () => new Promise(done => {
+const summarize = (text: string, maxLength: number = 50) => text.length > maxLength ? text.slice(0, maxLength) + '...' : text;
+
+const indexUsers = () => new Promise(async done => {
 	const p = path.join(__dirname, 'public', 'users', '*') + path.sep;
 
 	glob(p, {}, async (e: Error | null, files: string[]) => {
@@ -110,7 +119,7 @@ const indexUsers = () => new Promise(done => {
 	});
 });
 
-const indexBlogs = () => new Promise(done => {
+const indexBlogs = () => new Promise(async done => {
 	const p = path.join(__dirname, 'public', 'users', '**', 'blogs', '*.md');
 
 	glob(p, {}, async (e: Error | null, files: string[]) => {
@@ -118,16 +127,12 @@ const indexBlogs = () => new Promise(done => {
 			throw e;
 
 		try {
-			const blogs: {
-				user: string,
-				title: string,
-				date: Date,
-				data: string
-			}[] = await Promise.all(files.map(async f => {
+			const blogs: Blog[] = await Promise.all(files.map(async f => {
 				const split = f.split(path.sep);
 
 				const filename = split[split.length - 1];
 				const username = split[split.length - 3];
+				const id = path.basename(filename, '.md')
 				
 				const rawData = (await fs.readFile(f)).toString();
 				const {
@@ -138,20 +143,21 @@ const indexBlogs = () => new Promise(done => {
 				if (
 					!['title'].map(k => !!info[k]).reduce((a, b) => a && b)
 					||
-					!['date'].map(k => day(info[k], 'YYYY-MM-DD hh:mm:ss').isValid()).reduce((a, b) => a && b)
+					!['date'].map(k => day(info[k], DATE_FORMAT).isValid()).reduce((a, b) => a && b)
 				)
-					throw new Error(`Invalid values for '${username}/blogs/${(path.basename(filename))}'.`);
+					throw new Error(`Invalid values for '${username}/blogs/${id}'.`);
+				
+				const user = state.users.find(u => u.username === username);
+				user.blogs = true;
 
 				return {
+					id,
 					user: username,
 					title: info.title,
-					date: day(info.date, 'YYYY-MM-DD hh:mm:ss').toDate(),
+					date: day(info.date, DATE_FORMAT).toDate(),
 					data: markdown.trim()
 				};
 			}));
-
-			// TODO
-			// users.map(...) ???
 
 			blogs.sort((a, b) => b.date.valueOf() - a.date.valueOf());
 			state.blogs = blogs;
@@ -180,10 +186,49 @@ const writeIndices = async () => {
 	await fs.writeFile(sitemap, '', { flag: 'w+', encoding: 'utf-8' });
 	for (const route of routes)
 		await fs.writeFile(sitemap, SITE_URL + (route === '' ? '' : ('?/' + route)) + '\n', { flag: 'a+', encoding: 'utf-8' });
+	console.log('Sitemap generated!');
 
-	console.log(state.blogs.map(b => ({ ...b, data: (b.data as string).slice(0, 30) + '...' })));
-	// TODO
+	for (const u of state.users.filter(u => u.blogs)) {
+		const userBlogs = state.blogs.filter(b => b.user === u.username);
+		
+		const pageCount = Math.floor(userBlogs.length / PAGE_SIZE);
+		const leftItemCount = userBlogs.length % PAGE_SIZE;
 
+		await fs.ensureDir(path.join(__dirname, 'public', 'users', u.username, 'blogs', 'index'));
+		await fs.emptyDir(path.join(__dirname, 'public', 'users', u.username, 'blogs', 'index'));
+
+		for (let i = 0; i < pageCount; i++) {
+			const init = i * PAGE_SIZE;
+			const final = (i + 1) * PAGE_SIZE;
+
+			let pageBlogs: any[] = userBlogs.slice(init, final);
+			pageBlogs = pageBlogs.map(b => ({
+				id: b.id,
+				title: b.title,
+				date: day(b.date).format(DATE_FORMAT),
+				summary: summarize(b.data)
+			}));
+
+			const ymlDataObject = { blogs: pageBlogs, lastPage: i === pageCount - 1 && leftItemCount === 0 };
+			const ymlData = yaml.stringify(ymlDataObject);
+			await fs.writeFile(path.join(__dirname, 'public', 'users', u.username, 'blogs', 'index', `${i}.yml`), ymlData);
+		}
+
+		if (leftItemCount > 0) {
+			let pageBlogs: any[] = userBlogs.slice(-leftItemCount);
+			pageBlogs = pageBlogs.map(b => ({
+				id: b.id,
+				title: b.title,
+				date: day(b.date).format(DATE_FORMAT),
+				summary: summarize(b.data)
+			}));
+
+			const ymlDataObject = { blogs: pageBlogs, lastPage: true };
+			const ymlData = yaml.stringify(ymlDataObject);
+			await fs.writeFile(path.join(__dirname, 'public', 'users', u.username, 'blogs', 'index', `${pageCount}.yml`), ymlData);
+		}
+		console.log(`${pageCount + (leftItemCount > 0 ? 1 : 0)} blog pages generated for '${u.username}'!`);
+	}
 };
 
 if (require.main === module) {
