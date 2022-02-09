@@ -3,7 +3,7 @@
 	"version": "0.0.0",
 	"scripts": {
 		"start": "npm run dev",
-		"dev:index": "cross-env nodemon --watch public/users -e '*' --exec 'npm run index'",
+		"dev:index": "cross-env nodemon --watch 'public/users/**/*.md' -e '*' --exec 'npm run index'",
 		"dev:server": "vite --port 8080",
 		"dev": "concurrently npm:dev:index npm:dev:server",
 		"build": "npm-run-all index build:app",

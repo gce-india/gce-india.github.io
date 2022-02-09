@@ -13,6 +13,7 @@ import {
 } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
+	faBlog,
 	faEnvelope,
 	faFlag,
 	faGraduationCap,
@@ -26,6 +27,7 @@ import rehypeRaw from 'rehype-raw';
 
 import { Expert } from '../../schema/expert-local';
 import { Meta } from '..';
+import Listing from '../blog-listing';
 import Icon from './social-icon';
 
 const Profile = (expert: Expert) => {
@@ -124,6 +126,23 @@ const Profile = (expert: Expert) => {
 									{ expert.email }
 								</a>
 							</div>
+							<div title={`${expert.name}'s blog`}
+								style={{
+									fontSize: '0.8em',
+									textOverflow: 'ellipsis',
+									overflow: 'hidden',
+									whiteSpace: 'nowrap'
+								}}>
+								<Link to={`/blog/${expert.username}`}>
+									<FontAwesomeIcon
+										style={{
+											marginLeft: 2,
+											marginRight: 8
+										}}
+										icon={faBlog} />
+									Blog
+								</Link>
+							</div>
 							<div className='my-3'
 								style={{ borderTop: '1px solid lightgrey' }} />
 							{
@@ -198,6 +217,12 @@ const Profile = (expert: Expert) => {
 						</>
 						: ''
 				}
+				<h4 className='mt-3'>Blog posts</h4>
+				<div className='mt-3 mb-4'
+					style={{ borderTop: '1px solid lightgrey' }} />
+				<div>
+					<Listing username={expert.username} />
+				</div>
 				<Row className='mt-3 justify-content-center'>
 					<Col style={{ fontSize: '0.9em' }} xs='12' className='opacity-50'>
 						Click here to <a target='_blank' href={`https://githubcampus.expert/${expert.username}`} rel="noreferrer">view the profile</a> on the official <a target='_blank' href='https://githubcampus.expert' rel="noreferrer">GitHub Campus Expert website</a>.

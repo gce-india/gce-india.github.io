@@ -2,6 +2,8 @@ import axios from 'axios';
 import yaml from 'yaml';
 import day from 'dayjs';
 import utc from 'dayjs/plugin/utc';
+// @ts-ignore
+import metadataParser from 'markdown-yaml-metadata-parser';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
 import localizedFormat from 'dayjs/plugin/localizedFormat';
 
@@ -36,4 +38,32 @@ const getBlogs_ = async (page: number = 0, username?: string) => {
 	}
 };
 
+const getBlog_ = async (postID: string, username: string) => {
+	try {
+		const route = `/users/${username}/blogs/${postID}.md`;
+		const resp = await axios.get(route);
+
+		const {
+			metadata: info,
+			content: markdown
+		}: {
+			metadata: Blog,
+			content: string
+		} = metadataParser(resp.data);
+
+		const blog: any = {
+			id: postID,
+			user: username,
+			title: info.title,
+			date: day(info.date, DATE_FORMAT).format(PUBLIC_DATE_FORMAT),
+			data: markdown
+		};
+
+		return blog;
+	} catch (e) {
+		return null;
+	}
+};
+
 export const getBlogs = getBlogs_;
+export const getBlog = getBlog_;

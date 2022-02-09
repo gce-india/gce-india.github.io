@@ -14,7 +14,7 @@ import './blogs.css';
 const Listing = ({ username }: {
 	username?: string
 }) => {
-	const [list, setList] = useState<Blog[] | null>([]);
+	const [list, setList] = useState<Blog[] | null>(null);
 	const [page, setPage] = useState<number>(0);
 	const [last, setLast] = useState<boolean>(false);
 
@@ -42,7 +42,11 @@ const Listing = ({ username }: {
 		updatePage(0);
 	}, []);
 
-	if (list == null)
+	useEffect(() => {
+		updatePage(0);
+	}, [username]);
+
+	if (list === null)
 		return <Loading>
 			Loading posts...
 		</Loading>;
@@ -58,19 +62,19 @@ const Listing = ({ username }: {
 		<Row style={{
 			minHeight: 400
 		}}  className='mt-3 justify-content-center'>
-			{list.map((post, i) => <Col key={i} xs='12' lg='10'>
+			{list.map((post, i) => <Col key={i} xs='12'>
 				<Link className='blog-post-title no-underline' to={`/blog/${post.user}/${post.id}`}>
 					<h5 className='blog-post-title on-hover'>{ post.title }</h5>
 				</Link>
 				<div className='about-blog-post mb-3'>
-					By <Link to={`/${post.user}`}>{ post.user }</Link> on { post.date }
+					By <Link to={`/blog/${post.user}`}>{ post.user }</Link> on { post.date }
 					<br/>
 					<div className='post-summary'>{ post.data }</div>
 				</div>
 			</Col>)}
 		</Row>
 		<Row className='mt-3 justify-content-center'>
-			<Col xs='12' lg='10'>
+			<Col xs='12'>
 				<Row>
 					<Col>
 						<Button
