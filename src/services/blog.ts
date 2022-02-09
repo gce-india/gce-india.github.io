@@ -65,5 +65,8 @@ const getBlog_ = async (postID: string, username: string) => {
 	}
 };
 
+const parseAndLinkMentions_ = (text: string) => text.replace(/@([A-Za-z0-9\-_]+)/g, `[$&](https://github.com/$1)`);
+
 export const getBlogs = getBlogs_;
 export const getBlog = getBlog_;
+export const parseAndLinkMentions = parseAndLinkMentions_;

@@ -14,7 +14,7 @@ import { title } from '../constants';
 import Meta from './meta';
 import Loading from './loading';
 import { Blog } from '../schema/blog';
-import { getBlog } from '../services/blog';
+import { getBlog, parseAndLinkMentions } from '../services/blog';
 import './blogs.css';
 
 const Post = () => {
@@ -79,7 +79,7 @@ const Post = () => {
 			<Markdown
 					remarkPlugins={[remarkGfm]}
 					rehypePlugins={[rehypeRaw, rehypeSanitize]}
-					linkTarget='_blank'>{ blog.data }</Markdown>
+					linkTarget='_blank'>{ parseAndLinkMentions(blog.data) }</Markdown>
 			</Col>
 		</Row>
 		<Row className='mt-3 justify-content-center'>

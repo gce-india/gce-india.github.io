@@ -27,6 +27,7 @@ import rehypeRaw from 'rehype-raw';
 
 import { Expert } from '../../schema/expert-local';
 import { Meta } from '..';
+import { parseAndLinkMentions } from '../../services/blog';
 import Listing from '../blog-listing';
 import Icon from './social-icon';
 
@@ -173,7 +174,7 @@ const Profile = (expert: Expert) => {
 				<Markdown
 					remarkPlugins={[remarkGfm]}
 					rehypePlugins={[rehypeRaw, rehypeSanitize]}
-					linkTarget='_blank'>{ expert.about }</Markdown>
+					linkTarget='_blank'>{ parseAndLinkMentions(expert.about) }</Markdown>
 				{
 					expert.skills.length > 0 ? <>
 						<h4 className='mt-2'>Skills</h4>
