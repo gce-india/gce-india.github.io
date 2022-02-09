@@ -1,0 +1,73 @@
+blogs:
+  - id: GettingRusty
+    title: Getting Rusty
+    author: paramsiddharth
+    date: 2022-02-02 11:29:00 PM
+    summary: Forest Kristoffer Ziven Anderson, an active game developer, a part of
+      the development team of the Veloren RPG, and the campus expert from
+      Carleton Uni...
+  - id: ScalaWorkshop
+    title: Introduction to Scala and Functional Programming
+    author: paramsiddharth
+    date: 2022-01-31 11:29:00 PM
+    summary: >-
+      Lavínia Paganini, the campus expert from UFPE, performed live on Scala and
+      functional programming with a workshop at our local community at JUET.
+
+
+      In ...
+  - id: AWSWorkshop
+    title: Automate AWS Infrastructure using Python and Boto3
+    author: paramsiddharth
+    date: 2022-01-29 11:29:00 PM
+    summary: We're honoured that a really qualified individual, Adil Shehzad, an AWS
+      community builder, an author on Educative, and the campus expert from UCP,
+      was...
+  - id: SparkARWorkshop
+    title: Dive into Spark AR
+    author: paramsiddharth
+    date: 2022-01-28 11:30:00 PM
+    summary: >-
+      Harshita Jain, the campus expert from NITH, performed live on Spark AR
+      with a workshop at our local community at JUET.
+
+
+      We explored:
+
+
+      Introduction to ...
+  - id: ReactWorkshop
+    title: A Beginner's Guide to React and CSS-in-JS Libraries
+    author: paramsiddharth
+    date: 2022-01-26 10:30:20 PM
+    summary: >-
+      This Republic Day, in a live workshop on YouTube, Pritish Samal, the
+      campus expert from NITR, performed on React and CSS-in-JS Libraries.
+
+
+      We explored...
+  - id: VueWorkshop
+    title: A Beginner's Guide to Vue.js
+    author: paramsiddharth
+    date: 2022-01-20 11:59:20 PM
+    summary: >-
+      In a live workshop on YouTube, Raheel Siddiqui, the campus expert from
+      UIT, talked about Vue and how a beginner can get started with it.
+
+
+      We explored:...
+  - id: Headstart
+    title: Headstart 2022
+    author: induviduality
+    date: 2022-01-02 06:30:00 PM
+    summary: Headstart is an informative event to help freshers navigate tech. It
+      aims to aid them in starting and supporting their journey as a developer
+      by helpi...
+  - id: DevFundamentals
+    title: Development Fundamentals and Version Control Workshop
+    author: paramsiddharth
+    date: 2021-12-01 02:08:00 PM
+    summary: It was an event for the university freshers which lays the foundation
+      for our future workshops and helps the CS students get started with their
+      develo...
+lastPage: true

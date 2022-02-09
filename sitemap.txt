@@ -23,3 +23,11 @@ https://gce-india.github.io/?/singhankit62000
 https://gce-india.github.io/?/sudip-mondal-2002
 https://gce-india.github.io/?/SunitRoy2703
 https://gce-india.github.io/?/yashica-patodia
+https://gce-india.github.io/?/blog/paramsiddharth/GettingRusty
+https://gce-india.github.io/?/blog/paramsiddharth/ScalaWorkshop
+https://gce-india.github.io/?/blog/paramsiddharth/AWSWorkshop
+https://gce-india.github.io/?/blog/paramsiddharth/SparkARWorkshop
+https://gce-india.github.io/?/blog/paramsiddharth/ReactWorkshop
+https://gce-india.github.io/?/blog/paramsiddharth/VueWorkshop
+https://gce-india.github.io/?/blog/induviduality/Headstart
+https://gce-india.github.io/?/blog/paramsiddharth/DevFundamentals
