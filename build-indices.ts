@@ -171,14 +171,16 @@ const indexBlogs = () => new Promise(async done => {
 });
 
 const writeIndices = async () => {
-	const { users } = state;
+	const { users, blogs } = state;
 
 	const routes = [
 		'',
 		'discover',
 		'about',
 		'contact',
-		...users.map(u => u.username)
+		'blog',
+		...users.map(u => u.username),
+		...blogs.slice(0, 25).map(b => `blog/${b.user}/${encodeURIComponent(b.id)}`)
 	];
 	const sitemap = path.join(__dirname, 'public', 'sitemap.txt');
 	await fs.writeFile(sitemap, '', { flag: 'w+', encoding: 'utf-8' });
@@ -188,7 +190,7 @@ const writeIndices = async () => {
 
 	for (const u of users.filter(u => u.blogs)) {
 		delete u.blogs;
-		const userBlogs = state.blogs.filter(b => b.user === u.username);
+		const userBlogs = blogs.filter(b => b.user === u.username);
 		
 		const pageCount = Math.floor(userBlogs.length / PAGE_SIZE);
 		const leftItemCount = userBlogs.length % PAGE_SIZE;
@@ -234,7 +236,6 @@ const writeIndices = async () => {
 	console.log(`${users.length} campus experts indexed.`);
 	
 	{
-		const blogs = state.blogs;
 		const pageCount = Math.floor(blogs.length / PAGE_SIZE);
 		const leftItemCount = blogs.length % PAGE_SIZE;
 
