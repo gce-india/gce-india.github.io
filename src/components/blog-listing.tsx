@@ -59,9 +59,7 @@ const Listing = ({ username }: {
 		</Row>;
 	
 	return <>
-		<Row style={{
-			minHeight: 400
-		}}  className='mt-3 justify-content-center'>
+		<Row className='mt-3 justify-content-center'>
 			{list.map((post, i) => <Col key={i} xs='12'>
 				<Link className='blog-post-title no-underline' to={`/blog/${post.user}/${post.id}`}>
 					<h5 className='blog-post-title on-hover'>{ post.title }</h5>
