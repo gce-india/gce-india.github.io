@@ -1,0 +1,22 @@
+name: Sudip Mondal  # Your full name here
+university: Indian Institute of Technology, Madras  # The university you belong to
+location: Chennai, TamilNadu  # Your location
+country: India  # Your country (most probably India)
+email: ce20b112@smail.iitm.ac.in  # Your e-mail address
+avatar: https://avatars.githubusercontent.com/sudip-mondal-2002  # A nice photo
+skills: [python, javascript, git, django, nodejs, reactjs, html, css, c++, java, android studio, unreal engine, machine learning]  # Your skills
+communities: [GitHub Programming Community, IIT Madras]  # Your clubs and communities
+social:  # Add all your social links below
+- name: Website
+  url:  https://sudipmondal.tk
+- name: Twitter
+  url:  https://twitter.com/SUDIPMO19931261
+- name: Instagram
+  url:  https://www.instagram.com/sudip._.mondal/
+- name: YouTube
+  url:  https://www.youtube.com/channel/UCvfY9VkXaFNxQJO7lfDV6Vw
+- name: LinkedIn
+  url:  https://www.linkedin.com/in/sudipmondal2002/
+- name: GitHub
+  url:  https://github.com/sudip-mondal-2002
+  # You can similarly add more if you want!

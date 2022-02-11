@@ -116,12 +116,16 @@ users:
     university: KLE Technological University
     location: Hubli
     local: false
-  - name: Sudip Mondal
-    username: sudip-mondal-2002
-    picture: https://avatars.githubusercontent.com/sudip-mondal-2002
+  - username: sudip-mondal-2002
+    name: Sudip Mondal
     university: Indian Institute of Technology, Madras
-    location: Chennai
-    local: false
+    location: Chennai, TamilNadu
+    country: India
+    avatar: https://avatars.githubusercontent.com/sudip-mondal-2002
+    communities:
+      - GitHub Programming Community
+      - IIT Madras
+    local: true
   - name: Sunit Roy
     username: SunitRoy2703
     picture: https://avatars.githubusercontent.com/u/67560900?v=4
