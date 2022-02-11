@@ -123,8 +123,7 @@ users:
     country: India
     avatar: https://avatars.githubusercontent.com/sudip-mondal-2002
     communities:
-      - GitHub Programming Community
-      - IIT Madras
+      - GitHub Programming Community - IIT Madras
     local: true
   - name: Sunit Roy
     username: SunitRoy2703

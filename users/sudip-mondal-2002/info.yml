@@ -5,7 +5,7 @@ country: India  # Your country (most probably India)
 email: ce20b112@smail.iitm.ac.in  # Your e-mail address
 avatar: https://avatars.githubusercontent.com/sudip-mondal-2002  # A nice photo
 skills: [python, javascript, git, django, nodejs, reactjs, html, css, c++, java, android studio, unreal engine, machine learning]  # Your skills
-communities: [GitHub Programming Community, IIT Madras]  # Your clubs and communities
+communities: [GitHub Programming Community - IIT Madras]  # Your clubs and communities
 social:  # Add all your social links below
 - name: Website
   url:  https://sudipmondal.tk
