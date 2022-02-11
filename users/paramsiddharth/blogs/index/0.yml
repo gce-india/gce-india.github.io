@@ -1,4 +1,10 @@
 blogs:
+  - id: SpringBootWorkshop
+    title: Keep your earnings coming with Spring Boot
+    date: 2022-02-09 12:05:00 AM
+    summary: Nathaly Toledo, a top-rated full-stack developer on Upwork, one who
+      aims to fight social challenges with her work, and the campus expert from
+      the Univ...
   - id: GettingRusty
     title: Getting Rusty
     date: 2022-02-02 11:29:00 PM
