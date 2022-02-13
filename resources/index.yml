@@ -131,9 +131,13 @@ users:
     university: Engineering Institute For Junior Executives
     location: Kolkata
     local: false
-  - name: Yashica Patodia
-    username: yashica-patodia
-    picture: https://avatars.githubusercontent.com/u/58307462?v=4
+  - username: yashica-patodia
+    name: Yashica Patodia
     university: Indian Institute of Technology Kharagpur
-    location: Calcutta
-    local: false
+    location: West Bengal, Calcutta
+    country: India
+    avatar: https://avatars.githubusercontent.com/u/58307462?s=400&u=6ec0992becda4453d887c658338e3b9280578f74&v=4
+    communities:
+      - Kharagpur Open Source Society
+      - Departmental Representative for Women's Council
+    local: true
