@@ -1,0 +1,21 @@
+name: Yashica Patodia  # Your full name here
+university: Indian Institute of Technology Kharagpur  # The university you belong to
+location: West Bengal, Calcutta # Your location
+country: India  # Your country (most probably India)
+email: yashica1002@gmail.com  # Your e-mail address
+avatar: https://avatars.githubusercontent.com/u/58307462?s=400&u=6ec0992becda4453d887c658338e3b9280578f74&v=4  # A nice photo
+skills: [C++, Java, Python, HTML, CSS, JS,ML,DL,RL]  # Your skills
+communities: [Kharagpur Open Source Society, Departmental Representative for Women's Council]  # Your clubs and communities
+social:  # Add all your social links below
+- name: Website
+  url:  https://yashica-patodia.github.io/
+- name: Twitter
+  url:  https://twitter.com/PatodiaYashica
+- name: Instagram
+  url:  https://www.instagram.com/yashica_p47/
+- name: LinkedIn
+  url:  https://www.linkedin.com/in/yashica-patodia/
+- name: GitHub
+  url:  https://github.com/yashica-patodia
+- name: Blog
+  url:  https://yashica-patodia.github.io/blogs/
