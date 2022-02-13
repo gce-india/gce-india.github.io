@@ -1,4 +1,11 @@
 blogs:
+  - id: WebAccessibilityWorkshop
+    title: Web Accessibility
+    author: paramsiddharth
+    date: 2022-02-12 11:30:00 PM
+    summary: Clifford Ouma,  a React Native developer, talented speaker, and the
+      campus expert from the Moi University, performed live for a workshop on
+      Web Access...
   - id: SpringBootWorkshop
     title: Keep your earnings coming with Spring Boot
     author: paramsiddharth

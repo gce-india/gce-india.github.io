@@ -23,6 +23,7 @@ https://gce-india.github.io/?/singhankit62000
 https://gce-india.github.io/?/sudip-mondal-2002
 https://gce-india.github.io/?/SunitRoy2703
 https://gce-india.github.io/?/yashica-patodia
+https://gce-india.github.io/?/blog/paramsiddharth/WebAccessibilityWorkshop
 https://gce-india.github.io/?/blog/paramsiddharth/SpringBootWorkshop
 https://gce-india.github.io/?/blog/paramsiddharth/GettingRusty
 https://gce-india.github.io/?/blog/paramsiddharth/ScalaWorkshop
