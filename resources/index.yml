@@ -131,12 +131,16 @@ users:
     communities:
       - GitHub Programming Community - IIT Madras
     local: true
-  - name: Sunit Roy
-    username: SunitRoy2703
-    picture: https://avatars.githubusercontent.com/u/67560900?v=4
+  - username: SunitRoy2703
+    name: Sunit Roy
     university: Engineering Institute For Junior Executives
-    location: Kolkata
-    local: false
+    location: Howrah, West Bengal
+    country: India
+    avatar: https://avatars.githubusercontent.com/u/67560900?v=4
+    communities:
+      - TwitterDev Kolkata
+      - GitHub Campus Expert
+    local: true
   - username: yashica-patodia
     name: Yashica Patodia
     university: Indian Institute of Technology Kharagpur

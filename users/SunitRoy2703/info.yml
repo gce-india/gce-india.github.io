@@ -1,0 +1,24 @@
+name: Sunit Roy
+university: Engineering Institute For Junior Executives
+location: Howrah, West Bengal  # Your location
+country: India  # Your country (most probably India)
+email: iamsunitroy03@gmail.com  # Your e-mail address
+avatar: https://avatars.githubusercontent.com/u/67560900?v=4  # A nice photo
+skills: [android development, content creation, open source, kotlin, flutter, tflite]  # Your skills
+communities: [TwitterDev Kolkata, GitHub Campus Expert]  # Your clubs and communities
+social:  # Add all your social links below
+- name: Website
+  url:  https://sunitroy2703.github.io/
+- name: YouTube
+  url:  https://www.youtube.com/c/SunitRoy
+- name: Twitter
+  url:  https://twitter.com/HeySunit
+- name: Instagram
+  url:  https://www.instagram.com/sunitroy_/
+- name: LinkedIn
+  url:  https://www.linkedin.com/in/sunit-roy/
+- name: GitHub
+  url:  https://github.com/SunitRoy2703
+- name: Blog
+  url:  https://sunitroy.medium.com/
+  # You can similarly add more if you want!
