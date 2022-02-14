@@ -48,12 +48,15 @@ users:
     university: Ramrao Adik Institute of Technology
     location: Mumbai
     local: false
-  - name: Harshita Jain
-    username: harshitajain165
-    picture: https://avatars.githubusercontent.com/u/77115160?s=400&u=e1be447fed95e626ac3f6a4fea59b9853457aaa9&v=4
+  - username: harshitajain165
+    name: Harshita Jain
     university: National Institute of Technology Hamirpur
-    location: Hamirpur
-    local: false
+    location: Hamirpur, Himachal Pradesh
+    country: India
+    avatar: https://www.dholak.pur/chintu.png
+    communities:
+      - Society for Promotion of Electronics Culture
+    local: true
   - username: induviduality
     name: Induja Shankar
     university: Chennai Institute of Technology
