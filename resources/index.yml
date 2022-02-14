@@ -95,12 +95,15 @@ users:
       - PyData Guna
       - LOSDC
     local: true
-  - name: Sakshi Choudhary
-    username: sakshi-choudhary
-    picture: https://avatars.githubusercontent.com/u/66865329?v=4
-    university: SRM Institute of Science and Technology, Kattankulathur
-    location: Chennai
-    local: false
+  - username: sakshi-choudhary
+    name: Sakshi Choudhary
+    university: SRM Institute of Science and Technology
+    location: Chennai, Tamil Nadu
+    country: India
+    avatar: https://avatars.githubusercontent.com/u/66865329?s=400&u=d293c62f3fbaa1bb3937ed09661f5941fc422be2&v=4
+    communities:
+      - GitHub Community SRM
+    local: true
   - name: Shrankhla Srivastava
     username: shrankhla20
     picture: https://avatars.githubusercontent.com/u/59532277?v=4
