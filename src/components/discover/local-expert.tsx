@@ -90,10 +90,14 @@ const Expert = ({ expert }: {
 				<FontAwesomeIcon icon={faInbox} />{' '}
 				{
 					expert.communities.map((c, i) => <Fragment key={i}>
-						<Badge title={c} style={{ maxWidth: '80%' }} color='secondary'>
+						<Badge title={c} style={{
+							maxWidth: '80%'
+						}} className='mb-1' color='secondary'>
 							<div style={{
 								textOverflow: 'ellipsis',
-								overflow: 'hidden',
+								overflowX: 'hidden',
+								height: '1.15em',
+								overflowY: 'visible',
 								display: 'inline-block',
 								maxWidth: '100%'
 							}} >{ c }</div>
