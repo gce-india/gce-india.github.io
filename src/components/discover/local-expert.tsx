@@ -90,7 +90,14 @@ const Expert = ({ expert }: {
 				<FontAwesomeIcon icon={faInbox} />{' '}
 				{
 					expert.communities.map((c, i) => <Fragment key={i}>
-						<Badge color='secondary'>{ c }</Badge>{' '}
+						<Badge title={c} style={{ maxWidth: '80%' }} color='secondary'>
+							<div style={{
+								textOverflow: 'ellipsis',
+								overflow: 'hidden',
+								display: 'inline-block',
+								maxWidth: '100%'
+							}} >{ c }</div>
+						</Badge>{' '}
 					</Fragment>)
 				}
 			</CardBody>
