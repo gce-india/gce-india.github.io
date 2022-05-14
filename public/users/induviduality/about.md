@@ -6,6 +6,4 @@ Being a strong advocate for diversity and inclusion in tech, Induja volunteers a
 
 Collaborative learning and inclusion are two values Induja holds high, and that's what draws her to get involved in communities.
 
-Other fun stuff Induja loves: dogs, being a weeb, a great debate
-
 Feel free to connect with her on [LinkedIn](https://www.linkedin.com/in/indujashankar/)!
