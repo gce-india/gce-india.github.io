@@ -67,12 +67,15 @@ users:
       - EliCIT
       - GDSC-CIT
     local: true
-  - name: Ishika Kesarwani
-    username: ishikkkkaaaa
-    picture: https://avatars.githubusercontent.com/u/64490215?v=4
-    university: University of Petroleum and Energy Studies
-    location: Dehradun
-    local: false
+  - username: ishikkkkaaaa
+    name: Ishika Kesarwani
+    university: University of Petroleum Energy and Studies
+    location: Gurgaon, Haryana
+    country: India
+    avatar: https://avatars.githubusercontent.com/u/64490215?v=4
+    communities:
+      - OPEN
+    local: true
   - name: Kaiwalya Koparkar
     username: kaiwalyakoparkar
     picture: https://avatars.githubusercontent.com/u/53310847?v=4
