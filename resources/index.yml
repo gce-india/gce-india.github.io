@@ -42,6 +42,18 @@ users:
     communities:
       - GDSC ADGITM
     local: true
+  - username: Dexters-Hub
+    name: Alwin John
+    university: College of Engineering Chengannur
+    location: Alappuzha, Kerala
+    country: India
+    avatar: https://avatars.githubusercontent.com/u/47777599?v=4
+    communities:
+      - GitHub Campus Expert
+      - TinkerHub CEC
+      - TinkerHub
+      - FOCES
+    local: true
   - name: Vaishnavi Dwivedi
     username: dwvicy
     picture: https://avatars.githubusercontent.com/u/29779226?s=400&u=2279ef21092c34d54f58f6963f4e073bebbfed4a&v=4
