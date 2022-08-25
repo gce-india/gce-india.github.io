@@ -17,6 +17,18 @@ users:
     university: Indira Gandhi Delhi Technical University for Women
     location: New Delhi
     local: false
+  - name: Ankur Gupta
+    username: ankurg132
+    picture: https://avatars3.githubusercontent.com/ankurg132
+    university: University Institute of Technology RGPV Bhopal
+    location: Bhopal
+    local: false
+  - name: Anurag Pal
+    username: anuragtech02
+    picture: https://avatars3.githubusercontent.com/anuragtech02
+    university: Institute of Engineering and Technology DAVV
+    location: Indore
+    local: false
   - name: Kartikey Rawat
     username: carrycooldude
     picture: https://avatars.githubusercontent.com/u/41143496?s=400&u=6fa5ebe1c18a4ad0b470a8830f4c8e80651f0472&v=4
@@ -100,6 +112,18 @@ users:
     university: Indian Institute of Information Technology, Guwahati
     location: Guwahati
     local: false
+  - name: Laukik Avhad
+    username: laukikk
+    picture: https://avatars.githubusercontent.com/u/53310764
+    university: Vishwakarma Institute of Technology
+    location: Pune
+    local: false
+  - name: Muskan Kothari
+    username: muskan-k
+    picture: https://avatars.githubusercontent.com/u/60001051?v=4
+    university: PES University
+    location: Bangalore
+    local: false
   - username: paramsiddharth
     name: Param Siddharth
     university: Jaypee University of Engineering and Technology
@@ -110,6 +134,18 @@ users:
       - PyData Guna
       - LOSDC
     local: true
+  - name: Priya Pahwa
+    username: priyapahwa
+    picture: https://avatars3.githubusercontent.com/priyapahwa
+    university: National Institute of Technology Hamirpur
+    location: Hamirpur
+    local: false
+  - name: Rishit Dagli
+    username: Rishit-dagli
+    picture: https://avatars.githubusercontent.com/u/39672672?v=4
+    university: High School, Incoming University of Toronto
+    location: Mumbai
+    local: false
   - username: sakshi-choudhary
     name: Sakshi Choudhary
     university: SRM Institute of Science and Technology
@@ -125,6 +161,12 @@ users:
     university: Indira Gandhi Delhi Technical University for Women
     location: Delhi
     local: false
+  - name: Shruti Agarwal
+    username: Shruti3004
+    picture: https://avatars.githubusercontent.com/u/56133783?v=4
+    university: JSS Academy of Technical Education, Noida
+    location: Noida
+    local: false
   - name: Siddharth Dayalwal
     username: siddharthdayalwal
     picture: https://avatars.githubusercontent.com/u/41017419?v=4
@@ -136,6 +178,12 @@ users:
     picture: https://avatars.githubusercontent.com/singhankit62000
     university: KLE Technological University
     location: Hubli
+    local: false
+  - name: Srinija Dharani
+    username: srinijadharani
+    picture: https://media-exp1.licdn.com/dms/image/D5603AQFCG1dGu0Akrg/profile-displayphoto-shrink_800_800/0/1638212954738?e=1657152000&v=beta&t=hMA6zmFGFK3d6tPf7Q7byS0S-efoZCewv8NquBb7Uos
+    university: Gandhi Institute of Technology and Management
+    location: Bangalore
     local: false
   - username: sudip-mondal-2002
     name: Sudip Mondal
