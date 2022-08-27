@@ -8,12 +8,6 @@ I also love building open-source projects some of which were also socially impac
 Seeing my work at a rather young age, I was invited to speak at 2 TEDx and 1 TED-Ed events. I also love hackathons and community and I have represented my country in multiple international hackathons and won a few too, I am also a Linux Foundation Dan Kohn Scholar.
 Most of the time you will find me working on new Math or Machine Learning research ideas and I have a couple of published papers as well.
 
-My co-ordinates are at:
-- [My website, rishit.tech](https://www.rishit.tech/)
-- [@rishit_dagli on Twitter](https://twitter.com/rishit_dagli)
-- [Rishit-dagli on GitHub](https://github.com/Rishit-dagli)
-- [rishit-dagli on LinkedIn](https://www.linkedin.com/in/rishit-dagli/)
-
 ## Random Stuff
 
 I also play Valorant, GTA 5, Apex Legends (a bit) and CS: GO, feel free to [play with me](https://www.rishit.tech/gaming).
