@@ -1,0 +1,20 @@
+name: Rishit Dagli  # Your full name here
+university: High School, Incoming University of Toronto  # The university you belong to
+location: Mumbai  # Your location
+country: India  # Your country (most probably India)
+email: rishit.dagli@gmail.com  # Your e-mail address
+avatar: https://avatars.githubusercontent.com/u/39672672?v=4  # A nice photo
+skills: [machine learning, research, computer vision, python, kotlin, kubernetes, tensorflow, pytorch]  # Your skills
+communities: [TensorFlow Mumbai, Kotlin mumbai]  # Your clubs and communities
+social:  # Add all your social links below
+- name: Website
+  url:  https://www.rishit.tech
+- name: Twitter
+  url:  https://twitter.com/rishit_dagli
+- name: Instagram
+  url:  https://www.instagram.com/rishit_dagli/
+- name: LinkedIn
+  url:  https://www.linkedin.com/in/rishit-dagli/
+- name: GitHub
+  url:  https://github.com/Rishit-dagli
+  # You can similarly add more if you want!

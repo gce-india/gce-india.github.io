@@ -140,12 +140,16 @@ users:
     university: National Institute of Technology Hamirpur
     location: Hamirpur
     local: false
-  - name: Rishit Dagli
-    username: Rishit-dagli
-    picture: https://avatars.githubusercontent.com/u/39672672?v=4
+  - username: Rishit-dagli
+    name: Rishit Dagli
     university: High School, Incoming University of Toronto
     location: Mumbai
-    local: false
+    country: India
+    avatar: https://avatars.githubusercontent.com/u/39672672?v=4
+    communities:
+      - TensorFlow Mumbai
+      - Kotlin mumbai
+    local: true
   - username: sakshi-choudhary
     name: Sakshi Choudhary
     university: SRM Institute of Science and Technology
