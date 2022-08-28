@@ -134,12 +134,15 @@ users:
       - PyData Guna
       - LOSDC
     local: true
-  - name: Priya Pahwa
-    username: priyapahwa
-    picture: https://avatars3.githubusercontent.com/priyapahwa
+  - username: priyapahwa
+    name: Priya Pahwa
     university: National Institute of Technology Hamirpur
-    location: Hamirpur
-    local: false
+    location: Hamirpur, Himachal Pradesh
+    country: India
+    avatar: https://avatars.githubusercontent.com/u/77075449
+    communities:
+      - SPEC
+    local: true
   - username: Rishit-dagli
     name: Rishit Dagli
     university: High School, Incoming University of Toronto
