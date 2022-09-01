@@ -112,12 +112,15 @@ users:
     university: Indian Institute of Information Technology, Guwahati
     location: Guwahati
     local: false
-  - name: Laukik Avhad
-    username: laukikk
-    picture: https://avatars.githubusercontent.com/u/53310764
-    university: Vishwakarma Institute of Technology
-    location: Pune
-    local: false
+  - username: laukikk
+    name: Laukik Avhad
+    university: Vishwakarma Institute of Techology
+    location: Pune, Maharashtra
+    country: India
+    avatar: https://avatars.githubusercontent.com/u/53310764
+    communities:
+      - GDSC VIT Pune
+    local: true
   - name: Muskan Kothari
     username: muskan-k
     picture: https://avatars.githubusercontent.com/u/60001051?v=4
