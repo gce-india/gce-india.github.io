@@ -29,6 +29,15 @@ users:
     university: Institute of Engineering and Technology DAVV
     location: Indore
     local: false
+  - username: Ayush7614
+    name: Ayush Kumar
+    university: ABES ENGINEERING COLLEGE GHAZIABAD UP INDIA
+    location: Ghaziabad, India
+    country: India
+    avatar: https://avatars.githubusercontent.com/u/67006255?v=4
+    communities:
+      - OPEN
+    local: true
   - name: Kartikey Rawat
     username: carrycooldude
     picture: https://avatars.githubusercontent.com/u/41143496?s=400&u=6fa5ebe1c18a4ad0b470a8830f4c8e80651f0472&v=4
