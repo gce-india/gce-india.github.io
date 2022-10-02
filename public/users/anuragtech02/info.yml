@@ -4,26 +4,9 @@ location: Indore, India
 country: India
 email: apal895@gmail.com
 avatar: https://avatars.githubusercontent.com/u/55744578
-skills:
-  [
-    Community Management,
-    Event Organising,
-    Public Speaking,
-    Team Management,
-    ReactJS,
-    Typescript,
-    C++,
-    HTML,
-    CSS,
-    Git,
-    UI/UX,
-    NodeJS,
-    Nginx,
-    CI/CD,
-    AWS,
-  ]
-communities: [
-GitHub Campus Experts]
+skills: [Community Management, Event Organising, Public Speaking, Team Management, ReactJS, Typescript, C++, HTML, CSS, Git, UI/UX, NodeJS, Nginx, CI/CD, AWS
+]
+communities: [GitHub Campus Experts]
 social:
   - name: GitHub
     url: https://github.com/anuragtech02
