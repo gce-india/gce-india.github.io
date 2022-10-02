@@ -23,12 +23,15 @@ users:
     university: University Institute of Technology RGPV Bhopal
     location: Bhopal
     local: false
-  - name: Anurag Pal
-    username: anuragtech02
-    picture: https://avatars3.githubusercontent.com/anuragtech02
+  - username: anuragtech02
+    name: Anurag Pal
     university: Institute of Engineering and Technology DAVV
-    location: Indore
-    local: false
+    location: Indore, India
+    country: India
+    avatar: https://avatars.githubusercontent.com/u/55744578
+    communities:
+      - GitHub Campus Experts
+    local: true
   - username: Ayush7614
     name: Ayush Kumar
     university: ABES ENGINEERING COLLEGE GHAZIABAD UP INDIA
