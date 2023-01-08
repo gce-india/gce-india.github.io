@@ -93,6 +93,15 @@ users:
     communities:
       - Society for Promotion of Electronics Culture
     local: true
+  - username: hrittikhere
+    name: Hrittik Roy
+    university: JIS Univeristy
+    location: Kolkata
+    country: India
+    avatar: https://avatars.githubusercontent.com/hrittikhere
+    communities:
+      - GitHub Campus Experts
+    local: true
   - username: induviduality
     name: Induja Shankar
     university: Chennai Institute of Technology
@@ -203,7 +212,7 @@ users:
     local: false
   - name: Srinija Dharani
     username: srinijadharani
-    picture: https://media-exp1.licdn.com/dms/image/D5603AQFCG1dGu0Akrg/profile-displayphoto-shrink_800_800/0/1638212954738?e=1657152000&v=beta&t=hMA6zmFGFK3d6tPf7Q7byS0S-efoZCewv8NquBb7Uos
+    picture: https://avatars.githubusercontent.com/srinijadharani
     university: Gandhi Institute of Technology and Management
     location: Bangalore
     local: false
