@@ -17,6 +17,12 @@ users:
     university: Indira Gandhi Delhi Technical University for Women
     location: New Delhi
     local: false
+  - name: Aniket Pal
+    username: Aniket762
+    picture: https://avatars.githubusercontent.com/u/67703407?v=4
+    university: National Institute of Technology, Rourkela
+    location: Rourkela,Odisha
+    local: false
   - name: Ankur Gupta
     username: ankurg132
     picture: https://avatars3.githubusercontent.com/ankurg132
@@ -32,6 +38,18 @@ users:
     communities:
       - GitHub Campus Experts
     local: true
+  - name: Ashwin Kumar Uppala
+    username: ashwinexe
+    picture: https://avatars.githubusercontent.com/ashwinexe
+    university: Sreenidhi Institute of Science and Technology
+    location: Hyderabad
+    local: false
+  - name: Atharva Shinde
+    username: Atharva-Shinde
+    picture: https://avatars.githubusercontent.com/Atharva-Shinde
+    university: Savitribai Phule Pune University
+    location: Pune
+    local: false
   - username: Ayush7614
     name: Ayush Kumar
     university: ABES ENGINEERING COLLEGE GHAZIABAD UP INDIA
@@ -46,6 +64,12 @@ users:
     picture: https://avatars.githubusercontent.com/u/41143496?s=400&u=6fa5ebe1c18a4ad0b470a8830f4c8e80651f0472&v=4
     university: Bhilai Institute of Technology,Durg
     location: Durg
+    local: false
+  - name: Dhiraj Chauhan
+    username: cdhiraj40
+    picture: https://avatars.githubusercontent.com/cdhiraj40
+    university: Thakur College of Engineering, Mumbai
+    location: Mumbai
     local: false
   - username: CIPHERTron
     name: Pritish Samal
@@ -93,6 +117,12 @@ users:
     communities:
       - Society for Promotion of Electronics Culture
     local: true
+  - name: Himanshu
+    username: himanshu007-creator
+    picture: https://avatars.githubusercontent.com/u/65963997
+    university: I.T.U.S [International Talent of Ultimate Student]
+    location: Jalandhar
+    local: false
   - username: hrittikhere
     name: Hrittik Roy
     university: JIS Univeristy
@@ -167,6 +197,12 @@ users:
     communities:
       - SPEC
     local: true
+  - name: Rahul Khinchi
+    username: Rahulkhinchi03
+    picture: https://avatars.githubusercontent.com/u/71710042?s=400&u=a1df71ee950c946b2cf4a4760584c8e51a1752c7&v=4
+    university: Marwadi University
+    location: Rajkot, India
+    local: false
   - username: Rishit-dagli
     name: Rishit Dagli
     university: High School, Incoming University of Toronto
@@ -177,6 +213,18 @@ users:
       - TensorFlow Mumbai
       - Kotlin mumbai
     local: true
+  - name: Saifuddin Saifee
+    username: SaifuddinSaifee
+    picture: https://pbs.twimg.com/profile_images/1599986531946885120/k6q-H431_400x400.jpg
+    university: Shri Vile Parle Kelvani Mandal's Institute of Technology Dhule
+    location: Dhule, Maharashtra, India
+    local: false
+  - name: Sakalya Mitra
+    username: Sakalya100
+    picture: https://avatars.githubusercontent.com/u/70064084?v=4
+    university: VIT Bhopal University
+    location: Bhopal
+    local: false
   - username: sakshi-choudhary
     name: Sakshi Choudhary
     university: SRM Institute of Science and Technology
@@ -186,6 +234,12 @@ users:
     communities:
       - GitHub Community SRM
     local: true
+  - name: Saptarshi Bhattacharya
+    username: sbk2k1
+    picture: https://avatars.githubusercontent.com/u/78817344
+    university: Maulana Abul Kalam Azad University of Technology
+    location: Kolkata
+    local: false
   - name: Shrankhla Srivastava
     username: shrankhla20
     picture: https://avatars.githubusercontent.com/u/59532277?v=4
@@ -235,6 +289,18 @@ users:
       - TwitterDev Kolkata
       - GitHub Campus Expert
     local: true
+  - name: Unnati
+    username: unnati914
+    picture: https://avatars.githubusercontent.com/unnati914
+    university: IGDTUW
+    location: Delhi,India
+    local: false
+  - name: Vraj Desai
+    username: vrajdesai78
+    picture: https://avatars.githubusercontent.com/u/43074241?v=4
+    university: ITM Vocational University, Vadodara
+    location: Vadodara, Gujarat
+    local: false
   - username: yashica-patodia
     name: Yashica Patodia
     university: Indian Institute of Technology Kharagpur
