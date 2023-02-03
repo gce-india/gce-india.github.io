@@ -213,12 +213,15 @@ users:
       - TensorFlow Mumbai
       - Kotlin mumbai
     local: true
-  - name: Saifuddin Saifee
-    username: SaifuddinSaifee
-    picture: https://pbs.twimg.com/profile_images/1599986531946885120/k6q-H431_400x400.jpg
+  - username: SaifuddinSaifee
+    name: Saifuddin Saifee
     university: Shri Vile Parle Kelvani Mandal's Institute of Technology Dhule
-    location: Dhule, Maharashtra, India
-    local: false
+    location: Dhule, Maharashtra
+    country: India
+    avatar: https://pbs.twimg.com/profile_images/1599986531946885120/k6q-H431_400x400.jpg
+    communities:
+      - The Network
+    local: true
   - name: Sakalya Mitra
     username: Sakalya100
     picture: https://avatars.githubusercontent.com/u/70064084?v=4
