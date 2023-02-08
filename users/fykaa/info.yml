@@ -1,0 +1,18 @@
+name: Fyka Ansari  # Your full name here
+university: Vishwakarma University  # The university you belong to
+location: Pune, Maharashtra  # Your location
+country: India  # Your country (most probably India)
+email: faeka6@gmail.com  # Your e-mail address
+avatar: https://avatars.githubusercontent.com/fykaa  # A nice photo
+skills: [C++, ReactJS, Python, HTML, CSS, JS]  # Your skills
+communities: [Newton School, GDSC, GCE]  # Your clubs and communities
+social:  # Add all your social links below
+- name: Website
+  url:  https://faekaansari.netlify.app/
+- name: Twitter
+  url:  https://twitter.com/
+- name: LinkedIn
+  url:  https://www.linkedin.com/in/faeka/
+- name: GitHub
+  url:  https://github.com/fykaa
+  # You can similarly add more if you want!

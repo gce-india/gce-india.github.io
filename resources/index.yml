@@ -108,6 +108,17 @@ users:
     university: Ramrao Adik Institute of Technology
     location: Mumbai
     local: false
+  - username: fykaa
+    name: Fyka Ansari
+    university: Vishwakarma University
+    location: Pune, Maharashtra
+    country: India
+    avatar: https://avatars.githubusercontent.com/fykaa
+    communities:
+      - Newton School
+      - GDSC
+      - GCE
+    local: true
   - username: harshitajain165
     name: Harshita Jain
     university: National Institute of Technology Hamirpur
