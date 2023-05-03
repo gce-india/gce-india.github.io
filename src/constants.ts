@@ -9,7 +9,7 @@ const GREETINGS: { [lang: string]: String } = {
 	Urdu: 				'السلام عليكم۔',
 	// Common for many Uttar Pradeshi and Bihari languages
 	UPBihar: 			'𑂣𑂩𑂝𑂰𑂧 𑃀',
-	Marathi: 			'नमस्कार ।',
+	Marathi: 			'नमस्कार.',
 	Gujarati: 			'નમસ્તે.',
 	Tamil: 				'வணக்கம்.',
 	Malayalam: 			'നമസ്കാരം.',
