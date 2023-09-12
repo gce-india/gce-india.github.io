@@ -1,4 +1,14 @@
 users:
+  - username: abdulvasay-234
+    name: Afnan Abdul Vasay
+    university: Lords Institute of Engineering & Technology
+    location: Hyderabad, India
+    country: India
+    avatar: https://avatars3.githubusercontent.com/abdulvasay-234
+    communities:
+      - CodeWave Hub
+      - Artigenz
+    local: true
   - name: Abhinav Sharma
     username: abhi-bhatra
     picture: https://github.com/abhi-bhatra.png
