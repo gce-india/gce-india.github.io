@@ -1,0 +1,20 @@
+name: Afnan Abdul Vasay
+university: Lords Institute of Engineering & Technology
+location: Hyderabad, India
+country: India  # Your country (most probably India)
+email: afnanabdulvasay234@gmail.com
+avatar: https://avatars3.githubusercontent.com/abdulvasay-234
+skills: [Java, Python, HTML, CSS, AI&ML]
+communities: [CodeWave Hub, Artigenz]  # Your clubs and communities
+social:  # Add all your social links below
+- name: Twitter
+  url:  https://twitter.com/abdulvasay_234
+- name: Instagram
+  url:  https://instagram.com/afnanabdulvasay
+- name: LinkedIn
+  url:  https://www.linkedin.com/in/afnanabdulvasay/
+- name: GitHub
+  url:  https://github.com/abdulvasay-234
+- name: Blog
+  url:  https://medium.com/@afnanabdulvasay
+  # You can similarly add more if you want!
