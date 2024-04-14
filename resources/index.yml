@@ -209,6 +209,17 @@ users:
       - PyData Guna
       - LOSDC
     local: true
+  - username: Pinkuagrawal28
+    name: Pinku Kumar Agrawal
+    university: Maulana Abul Kalam Azad University of Technology
+    location: Kolkata
+    country: India
+    avatar: https://avatars.githubusercontent.com/Pinkuagrawal28
+    communities:
+      - Campus Community
+      - ResCom
+      - QuarkSchool
+    local: true
   - username: priyapahwa
     name: Priya Pahwa
     university: National Institute of Technology Hamirpur
